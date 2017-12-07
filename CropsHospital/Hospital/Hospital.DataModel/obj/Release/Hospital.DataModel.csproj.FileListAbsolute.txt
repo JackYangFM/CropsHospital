@@ -1,0 +1,11 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\Hospital.DataModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\Hospital.DataModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\Hospital.Base.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\EntityFramework.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\EntityFramework.Extended.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\Hospital.Base.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\EntityFramework.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\bin\Release\EntityFramework.Extended.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\obj\Release\Hospital.DataModel.csprojResolveAssemblyReference.cache
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\obj\Release\Hospital.DataModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DataModel\obj\Release\Hospital.DataModel.pdb

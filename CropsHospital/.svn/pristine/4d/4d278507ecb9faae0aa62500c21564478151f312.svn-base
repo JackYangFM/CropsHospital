@@ -1,0 +1,22 @@
+﻿@model Hospital.Terminal.Models.ContactWayModel
+@{
+    ViewBag.Title = "联系方式";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header rel">
+        <a href="/hospital/detail/@Model.Hospital.HospitalId/"></a>
+        <h1>医院介绍</h1>
+    </header>
+
+    <div class="content-width hospital-contactway-width">
+        <ul class="hospital-contactway-box">
+            <li class="mar-bottom-30"><b>联系电话：</b>@Model.Hospital.Phone</li>
+            <li class="mar-bottom-30"><b>所在地址：</b>@Model.Hospital.Province @Model.Hospital.City </li>
+        </ul>
+    </div>
+
+
+</div>

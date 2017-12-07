@@ -1,0 +1,6 @@
+﻿@{
+    ViewBag.Title = "咨询详细页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>

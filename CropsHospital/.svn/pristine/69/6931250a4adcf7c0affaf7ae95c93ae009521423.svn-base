@@ -1,0 +1,11 @@
+﻿@model Hospital.Terminal.Models.HospitalDetailModel
+@{
+    ViewBag.Title = "单个庄稼医院信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>单个庄稼医院信息</h2>
+
+<h3>@Model.Hospital.HospitalName</h3>
+
+<div>@Model.Hospital.Brief</div>

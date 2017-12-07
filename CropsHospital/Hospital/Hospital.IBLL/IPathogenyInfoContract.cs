@@ -1,0 +1,46 @@
+﻿
+using System.Collections.Generic;
+using Hospital.ViewModel;
+
+namespace Hospital.IBLL
+{
+    /// <summary>
+    /// 病虫害表
+    /// </summary>
+    public interface IPathogenyInfoContract
+    {
+        /// <summary>
+        /// 通过分类编号获取病虫害列表
+        /// </summary>
+        /// <param name="cid">分类编号</param>
+        /// <returns></returns>
+        List<PathogenyInfo> GetPathogenyList(int cid);
+
+        /// <summary>
+        /// 获取病虫害信息
+        /// </summary>
+        /// <param name="itemNumber">商品编号</param>
+        /// <returns></returns>
+        PathogenyInfo GetPathogenyInfo(string itemNumber);
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        int SavePathogenyInfo(PathogenyInfo entity);
+
+        /// <summary>
+        /// 判断是否存在
+        /// </summary>
+        /// <param name="itemNumber"></param>
+        /// <returns></returns>
+        bool ExistsPathogenyInfo(string itemNumber);
+
+        /// <summary>
+        /// 获取最后5条数据（临时）
+        /// </summary>
+        /// <returns></returns>
+        List<PathogenyInfo> GetLastPathogeny();
+    }
+}

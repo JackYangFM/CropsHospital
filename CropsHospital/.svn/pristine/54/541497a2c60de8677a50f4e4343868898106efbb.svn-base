@@ -1,0 +1,44 @@
+﻿@model Hospital.Terminal.Models.HospitalIndexModel
+@{
+    ViewBag.Title = "医院列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top">
+        <a class="top-back" href="/home/index/"></a>
+        <h1>医院列表</h1>
+    </header>
+
+    <div class="content-width hospital-list-width" style="margin-top:148px">
+        <!--<div class="hospital-condition clearfix">
+          <a class="basis-area f-left">按地区</a>
+          <a class="basis-area f-right">按作物</a>
+        </div>-->
+        <!--医院列表-->
+        
+        <ul class="recommend-hospital mar-top-3">
+            @if (Model.HospitalList != null && Model.HospitalList.Count > 0)
+            {
+                foreach (var hospitalInfo in Model.HospitalList)
+                {
+                    <li class="r-h-list">
+                        <a href="/hospital/detail/@hospitalInfo.HospitalId/" class="clearfix">
+                            <span class="f-left b-box"></span>
+                            <span class="f-left">
+                                <h3 class="text-otw">@hospitalInfo.HospitalName</h3>
+                                <p class="text-otw">@hospitalInfo.Brief</p>
+                            </span>
+                            <span class="f-left"></span>
+                        </a>
+                    </li>
+                }
+            }
+            
+        </ul>
+        <!--推荐医院-->
+
+    </div>
+
+</div>

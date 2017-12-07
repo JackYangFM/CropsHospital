@@ -1,0 +1,93 @@
+﻿@model Hospital.Terminal.Models.ItemListModel
+@{
+    ViewBag.Title = "病虫害列表页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header rel">
+        <a href="/plant/category/@Model.MeCategoryList[1].Id/"></a>
+        <h1>@Model.MeCategoryList[2].CategoryName</h1>
+    </header>
+
+    <div class="content-width disease-third-width" style="margin-top: 306px">
+        <!--菜单选项-->
+        <div class="disease-menu clearfix">
+            <span class="disease-focus">病害（36）</span>
+            <span>虫害（50）</span>
+        </div>
+        <!--菜单选项-->
+        <!--病害列表-->
+        <div class="disease-list binghai-list clearfix">
+            @if (Model.PathogenyList != null && Model.PathogenyList.Count > 0)
+            {
+                foreach (var info in Model.PathogenyList)
+                {
+                    if (info.ItemType==0)
+                    {
+                        <span>
+                            @if (info.ImageList.Count > 0)
+                            {
+                                <a href="/plant/Detail/@info.ItemNumber/"><img src="@info.ImageList[0].ImgUrl" width="320" height="240" /></a>
+                            }
+                            else
+                            {
+                                <a href="/plant/Detail/@info.ItemNumber/"><img src="/Content/images/pic_binghai.jpg" width="320" height="240" /></a>
+                            }
+                            <h3 class="text-otw">@info.ItemName</h3>
+                        </span>
+                    }
+                }
+            }
+            
+        </div>
+        <!--病害列表-->
+        <!--虫害列表-->
+        <div class="disease-list chonghai-list clearfix">
+            @if (Model.PathogenyList != null && Model.PathogenyList.Count > 0)
+            {
+                foreach (var info in Model.PathogenyList)
+                {
+                    if (info.ItemType == 1)
+                    {
+                        <span>
+                            @if (info.ImageList.Count > 0)
+                            {
+                                <a href="/plant/Detail/@info.ItemNumber/"><img src="@info.ImageList[0].ImgUrl" width="320" height="240" /></a>
+                            }
+                            else
+                            {
+                                <a href="/plant/Detail/@info.ItemNumber/"><img src="/Content/images/pic_binghai.jpg" width="320" height="240" /></a>
+                            }
+                            <h3 class="text-otw">@info.ItemName</h3>
+                        </span>
+                    }
+                }
+            }
+        </div>
+
+        <!--虫害列表-->
+
+    </div>
+
+</div>
+
+@section scripts{
+    <!--菜单切换-->
+<script>
+    $(".disease-third-width .disease-menu span").click(function () { $(".disease-third-width .disease-menu span").toggleClass("disease-focus") });
+</script>
+<!--菜单切换-->
+<!--列表切换-->
+<script>
+    $(".disease-third-width .disease-menu span").click(function () {
+        var n = 0;
+        n = $(this).index();
+        $(".disease-third-width .disease-list").css("display", "none").eq(n).css("display", "block");
+
+    });
+</script>
+<!--列表切换-->    
+}
+

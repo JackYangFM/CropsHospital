@@ -1,0 +1,54 @@
+2016-05-22 08:46:08.9779        ■Error
+    ▲<>c__DisplayClass25.<BeginInvokeAction>b__22 => ControllerActionInvoker.InvokeExceptionFilters => BaseController.OnException
+    ◇Hospital.Web.Base.Controllers.BaseController.OnException(j:\庄稼医院\CropsHospital\Hospital\Hospital.Web.Base\Controllers\BaseController.cs:68)
+    ◆
+请求信息：
+Controller=Hospital，Action=Detail，RouteId=，TimeStamp=2016/5/22 8:46:07
+异常信息：
+System.InvalidOperationException: The entity type ExpertInfoEntity is not part of the model for the current context.
+   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 Hospital.BLL.ExpertInfoContract.GetExpertList(Int32 hospitalId, Int32 pageIndex, Int32 pageSize, Int32& total) 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.BLL\ExpertInfoContract.cs:行号 0
+   在 Hospital.Terminal.Controllers.HospitalController.Detail(Int32 hospitalId, Int32 page) 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.Terminal\Controllers\HospitalController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+***************************************************************************
+2016-05-22 09:21:22.9502        ■Error
+    ▲<>c__DisplayClass25.<BeginInvokeAction>b__22 => ControllerActionInvoker.InvokeExceptionFilters => BaseController.OnException
+    ◇Hospital.Web.Base.Controllers.BaseController.OnException(j:\庄稼医院\CropsHospital\Hospital\Hospital.Web.Base\Controllers\BaseController.cs:68)
+    ◆
+请求信息：
+Controller=Hospital，Action=Detail，RouteId=，TimeStamp=2016/5/22 9:21:22
+异常信息：
+System.InvalidOperationException: The entity type ExpertInfoEntity is not part of the model for the current context.
+   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 Hospital.BLL.ExpertInfoContract.GetExpertList(Int32 hospitalId, Int32 pageIndex, Int32 pageSize, Int32& total) 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.BLL\ExpertInfoContract.cs:行号 0
+   在 Hospital.Terminal.Controllers.HospitalController.Detail(Int32 hospitalId, Int32 page) 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.Terminal\Controllers\HospitalController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+***************************************************************************

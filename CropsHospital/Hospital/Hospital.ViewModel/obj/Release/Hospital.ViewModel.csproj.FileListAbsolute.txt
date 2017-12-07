@@ -1,0 +1,5 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Release\Hospital.ViewModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Release\Hospital.ViewModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Release\Hospital.ViewModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Release\Hospital.ViewModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Release\Hospital.ViewModel.csprojResolveAssemblyReference.cache

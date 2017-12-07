@@ -1,0 +1,395 @@
+﻿@charset "utf-8";
+
+/* CSS common */
+.wrapper-width { width: 10.80rem; margin-left: auto; margin-right: auto; }
+
+.header-top { position: fixed; z-index: 10; top: 0; left: 50%; width: 10.80rem; height: 1.44rem; margin-left: -5.40rem;   background-color: #fafafa; border-bottom: #b2b2b2 solid 1px;  }
+.header-top h1 { width: 100%; height: 1.44rem; font-size: 0.54rem; font-weight:normal; color: #42a437; line-height: 1.44rem; text-align: center; }
+.header-top .top-back { position: absolute; left: 0px; top: 0px; display: block; width: 2.20rem; height: 1.44rem; background-image: url(/Content/images/icon_back_pre.png); }
+.header-top .top-collection{ position: absolute; right: 0px; top: 0px; display: block; width: 144px; height: 1.44rem; background-image: url(/Content/images/icon_top_collection.png); }
+.header-top .top-collection-selected { background-image: url(/Content/images/icon_top_collection_selected.png); }
+.header-top .button-delete { position: absolute; right: 40px; top: 0; font-size: 48px; color: #42a437; line-height: 1.44rem;  }
+.header-top .top-submit { position: absolute; right: 0px; top: 0px; display: block; width: 160px; height: 1.44rem; line-height: 1.44rem; text-align: center; color:#42a437; font-size: 48px; }
+.delete-collection { height: 280px; width: 140px; background: url(/Content/images/icon_delete_collection.png) center center; background-repeat: no-repeat; }
+.delete-collection-another { height: 100%; width: 140px; background: url(/Content/images/icon_delete_collection.png) center center; background-repeat: no-repeat; }
+.delete-selected { background: url(/Content/images/icon_delete_collection_selected.png) center center; background-repeat: no-repeat; }
+
+.content-width { margin-top: 144px; padding-bottom: 260px ;  }
+ 
+.footer-bottom { position: fixed;  z-index: 9; bottom: 0px; left: 50%; width: 10.80rem; height: 1.60rem; margin-left: -5.40rem; background-color: #fafafa; border-top: #b2b2b2 solid 1px;}
+.footer-bottom a { display: block; float: left; width: 25%; height: 0.72rem; font-size: 0.32rem; line-height: 0.72rem; color: #999999; text-align: center; background-repeat: no-repeat; padding-top: 0.88rem; }
+.footer-bottom .footer-index { background-image: url(/Content/images/icon_index.png); }
+.footer-bottom .footer-collection { background-image:url(/Content/images/icon_collection.png); }
+.footer-bottom .footer-news { background-image:url(/Content/images/icon_news.png); }
+.footer-bottom .footer-user { background-image: url(/Content/images/icon_user.png); }
+
+.banner { position: relative; overflow: auto;  width: 10.80rem;  }
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+.banner ul li a { display: block; }
+.prev { display: block; position: absolute; top: 50%; left: 0px; z-index:4; margin-top: -80px; width: 120px; height: 160px; background-repeat: no-repeat; background-position:30px center; background-size: 30px 52px; opacity: 0.7; }
+.next { display: block; position: absolute; top: 50%; right: 0px; z-index:5; margin-top: -80px; width: 120px; height: 160px; background-repeat: no-repeat; background-position:70px center; background-size: 30px 52px; opacity: 0.7; }
+.dots { position: absolute; bottom: 15px; left: 50%; z-index:6; margin-left: -41px;  }
+.dots li {
+float: left; 
+display: inline-block;
+width: 10px;
+height: 10px;
+margin: 0 4px;
+text-indent: -999em;
+border: 2px solid #fff;
+border-radius: 6px;
+cursor: pointer;
+opacity: 0.4;
+-webkit-transition: background .5s, opacity .5s;
+-moz-transition: background .5s, opacity .5s;
+transition: background .5s, opacity .5s;
+}
+.active { background-color: green; }
+
+/* CSS index */
+.footer-bottom-index .footer-index { background-image: url(/Content/images/icon_index_selected.png); }
+
+.index-header h1 { background-image: url(/Content/images/icon_index_header.png); background-position:3.50rem center; background-repeat: no-repeat; background-size: auto 0.54rem;  }
+
+.index-width .menu-button { width: 100%; text-align: center; font-size: 38px; line-height: 96px;   }
+.index-width .menu-button a { display: block; float: left; width: 25%; height:270px; padding-top: 174px; border-left: 3px solid #ebebeb; background: #ffffff no-repeat center 34px; background-size: 140px 140px;  }
+.index-width .menu-button a:active { background-color: #e5e5e5; }
+.index-width .menu-button .question { background-image: url(/Content/images/icon_question.png); }
+.index-width .menu-button .hospital { background-image: url(/Content/images/icon_hospital.png); }
+.index-width .menu-button .answer { background-image: url(/Content/images/icon_answer.png); }
+.index-width .menu-button .diease { background-image: url(/Content/images/icon_disease.png); }
+.index-width .recommend-hospital .r-h-title { line-height: 120px;  }
+.index-width .recommend-hospital .r-h-title a:first-child { display: block; margin-left: 30px; font-size: 44px; color: #333333; background: url(/Content/images/line_title.png) no-repeat left center; padding-left: 30px;  }
+.index-width .recommend-hospital .r-h-title a:last-child { display: block; margin-left: 60px; font-size: 42px; color: #999999; }
+
+.index-width .recommend-hospital .r-h-title { width: 100%; height: 120px; line-height: 120px;  }
+.index-width .recommend-hospital .r-h-title a:first-child { display: block; height: 120px; margin-left: 30px; font-size: 44px; color: #333333; background: url(/Content/images/line_title.png) no-repeat left center; padding-left: 30px;  }
+.index-width .recommend-hospital .r-h-title a:last-child { display: block; height: 120px; padding-left: 30px; padding-right: 60px; font-size: 42px; color: #999999; }
+.index-width .recommend-hospital .r-h-list { margin-bottom: 3px; }
+.index-width .recommend-hospital .r-h-list a { display: block; width: 100%; height: 280px;  background-color: #ffffff; }
+.index-width .recommend-hospital .r-h-list a:active { background-color: #e5e5e5; }
+.index-width .recommend-hospital .r-h-list a span:nth-of-type(1) { width: 180px; height: 180px; margin: 50px 50px 0px 50px; background: url(/Content/images/hospital.jpg) no-repeat center center; background-size: contain;  }
+.index-width .recommend-hospital .r-h-list a span:nth-of-type(2) { width: 670px; height: 280px; }
+.index-width .recommend-hospital .r-h-list a span:nth-of-type(2) h3 { margin-top: 70px; margin-bottom: 30px;font-size: 44px; font-weight: normal; color: #333333; }
+.index-width .recommend-hospital .r-h-list a span:nth-of-type(2) p { font-size: 40px; color: #999999; }
+.index-width .recommend-hospital .r-h-list a span:nth-of-type(3) { width: 110px; height: 280px; background: url(/Content/images/circle_arrow.png) no-repeat center center; }
+.index-width .hot-question .h-q-title { width: 100%; height: 120px; line-height: 120px;  }
+.index-width .hot-question .h-q-title a:first-child { display: block; margin-left: 30px; font-size: 44px; color: #333333; background: url(/Content/images/line_title.png) no-repeat left center; padding-left: 30px;  }
+.index-width .hot-question .h-q-title a:last-child { display: block; margin-left: 60px; font-size: 42px; color: #999999; }
+.index-width .hot-question .h-q-list { margin-bottom: 3px; }
+.index-width .hot-question .h-q-list a { display: block; width: 100%; background-color: #ffffff; }
+.index-width .hot-question .h-q-list a:active { background-color: #e5e5e5; }
+.index-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; background: url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg) no-repeat center center; background-size: cover; }
+.index-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(2) { width: 400px; }
+.index-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(3) { width: 400px; text-align: right; }
+.index-width .hot-question .h-q-list a ul .second-floor p { width: 1020px; }
+.index-width .hot-question .h-q-list a ul .third-floor span:nth-of-type(1) { padding-left: 64px; background-image: url(/Content/images/icon_message.png); background-repeat:no-repeat; background-position: left center;}
+
+/* CSS user */
+.footer-bottom-personal .footer-user { background-image: url(/Content/images/icon_user_selected.png); }
+
+.personal-width .pic-user-box { width: 100%; height: 300px; background-image: url(/Content/images/bg_user.jpg); }
+.personal-width .pic-user-box .pic-user { width: 200px; height: 200px; border-radius: 100px; background: url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg) no-repeat center center; background-size: cover; margin: 50px 30px 50px 50px; }
+.personal-width .pic-user-box .login-register { height: 200px; line-height: 200px; margin-top: 50px; padding-right: 200px; color: #ffffff; font-size: 44px; }
+.personal-width .pic-user-box .user-date { height: 200px; font-size: 40px; line-height: 80px; color: #ffffff; margin-left: 30px; margin-top: 50px; }
+.personal-width .pic-user-box .user-date ul { margin-top: 20px;}
+.personal-width .personal-list li a { display: block; width: 100%; height: 120px;  padding-left: 30px; margin-bottom:3px; font-size: 42px; color: #333333; line-height: 120px; background:#ffffff url(/Content/images/icon_arrow_left.png) no-repeat right center; }
+.personal-width .personal-list li a:active { background-color: #e5e5e5; }
+.personal-width .button-exit { display: block; width: 1020px; height: 120px; border-radius: 20px;  margin: 60px auto 0px auto; line-height: 120px; text-align: center; color: #ffffff;  background-color: #ea4647; }
+.personal-width .button-exit:active { background-color: #d13f3f; }
+
+.exit-login-box { position: fixed; top: 0; left: 50%; z-index: 20; display: none; width: 1080px; height: 1920px;  margin-left: -540px; background-color:rgba(0,0,0,0.5);  }
+.exit-login-box .exit-login { width: 800px; height: 400px; margin-left: 140px; margin-top: 600px; background-color: #ffffff; border-radius: 20px;  }
+.exit-login-box .exit-login .exit-tip { height: 230px; line-height: 230px; font-size: 48px; color: #323232; }
+.exit-login-box .exit-login .exit-button {   font-size: 42px; line-height: 100px; } 
+.exit-login-box .exit-login .exit-button .exit-cancel { display: block; width: 270px; height: 100px; border-radius: 10px; border: solid 1px #42a437; color: #42a437; }
+.exit-login-box .exit-login .exit-button .exit-cancel:active { background-color: #e5e5e5; }
+.exit-login-box .exit-login .exit-button .exit-confirm { display: block; width: 270px; height: 100px; border-radius: 8px; background-color: #42a437; color: #ffffff; }
+.exit-login-box .exit-login .exit-button .exit-confirm:active { background-color: #388a2f; }
+
+/* CSS news */
+.news-header h1 { background-image: url(/Content/images/icon_news_header.png); background-position:400px center; background-repeat: no-repeat; background-size: auto 54px; }
+.footer-bottom-news .footer-news { background-image: url(/Content/images/icon_news_selected.png); }
+.news-width .news-list li { margin-bottom: 3px;  }
+.news-width .news-list li a { display:block; background-color: #ffffff;}
+.news-width .news-list li a:active { background-color: #e5e5e5;}
+.news-width .news-list li a .news-title span { display: block; width: 720px; margin-top: 30px; font-size: 48px; color: #333333;  overflow: hidden;  }
+
+.news-width .news-list li a .news-time span { display: block; width: 720px; margin-bottom: 30px; font-size: 42px; color: #999999;}
+
+/* CSS disease-first-width */
+.disease-first-width .kind-box { overflow: hidden; text-align: center; line-height: 132px; } 
+.disease-first-width .kind-box li:nth-of-type(1) { background-color: #ffffff;}
+.disease-first-width .kind-box .kind-title { width: 1020px; height: 132px; margin-left: 30px; margin-top: 30px;  font-size: 44px; color: #42a437; border: 2px solid #42a437; box-sizing:border-box; border-radius: 10px; }
+.disease-first-width .kind-box .kind-list a { display: block; float: left; width: 320px; height: 132px; margin-left: 30px; margin-top: 30px;   color:#333333; border: 2px solid #42a437; box-sizing: border-box; border-radius: 10px; background-color: #ffffff; }
+.disease-first-width .kind-box .kind-list a:active { background-color: #e5e5e5; }
+
+/* CSS disease-second-width */
+.disease-second-width .hebenke-box { overflow: hidden; text-align: center; line-height: 132px; }
+.disease-second-width .hebenke-box li a { display: block; float: left; width: 320px; height: 132px; margin-top: 30px; margin-left: 30px;  color:#333333; border: 2px solid #42a437; box-sizing: border-box; border-radius: 10px; background-color: #ffffff; }
+.disease-second-width .hebenke-box li a:active { background-color: #e5e5e5; }
+
+/* CSS disease-third-width */
+.disease-third-width .disease-menu { position: fixed; z-index: 15; left: 50%; width: 1080px; top: 145px; margin-left:-540px; height: 132px; background-color: #ffffff; } 
+.disease-third-width .disease-menu span { float: left; width: 50%; height: 132px; font-size: 44px; line-height: 132px; text-align:center;  box-sizing: border-box; }
+.disease-focus { color: #42a437; border-bottom: solid #42a437 4px; }
+
+.disease-third-width .disease-list { margin-top: 30px;  width: 100%; }
+.disease-third-width .disease-list span { display: block; float: left; width: 320px; margin-left: 30px; overflow: hidden; }
+.disease-third-width .disease-list span img { display: block; }
+.disease-third-width .disease-list span h3 { width: 100%; height: 100px; font-size: 36px; line-height: 100px; color: #333333; text-align: center; font-weight: normal;   }
+.disease-third-width .chonghai-list { display: none; }
+
+/* CSS disease-details-width */
+.disease-details-width .disease-brief-intro { width: 1020px; margin-left: auto; margin-right: auto; padding-top: 30px; overflow: hidden; }
+.disease-details-width h3 { width: 200px; height: 60px; border-radius: 10px; background-color: #42a437; font-size: 36px; line-height: 60px; font-weight: normal; color: #ffffff; text-align: center;  }
+.disease-details-width .disease-brief-intro ul { width: 100%; margin-top: 30px; border-radius: 10px; box-sizing: border-box; padding: 30px; background-color: #ffffff; }
+.disease-details-width .disease-brief-intro ul li { font-size: 40px; color: #666666; margin-bottom: 5px; }
+.disease-details-width .disease-brief-intro ul li b { font-weight: normal; color: #333333; }
+.disease-details-width .disease-pic ul li { float: left; width: 320px; height: 240px; margin-left: 30px; margin-top: 30px; }
+.disease-details-width .disease-else { width: 1020px; margin-left: auto; margin-right: 30px; font-size: 40px; }
+.disease-details-width .disease-else ul li { margin-top: 30px; box-sizing: border-box; padding: 30px; background-color: #ffffff; border-radius: 10px; }
+.disease-details-width .disease-else ul li h4 { margin-bottom: 10px; color: #333333; font-weight: normal;  }
+.img-tanceng { position: fixed; top: 0px; left: 0; width: 100%; height: 100%; background-color: #000000; opacity: 0.5; display: none; }
+.img-changebig { position: fixed; top: 50%; left: 50%; margin-top: -360px; margin-left: -480px;  width: 960px; height: 720px; }
+
+/* CSS .hospital-list-width */
+.hospital-list-width .recommend-hospital .r-h-list { margin-bottom: 3px; }
+.hospital-list-width .recommend-hospital .r-h-list a { display: block; width: 100%; height: 280px;  background-color: #ffffff; }
+.hospital-list-width .recommend-hospital .r-h-list a:active { background-color: #e5e5e5; }
+.hospital-list-width .recommend-hospital .r-h-list a span:nth-of-type(1) { width: 180px; height: 180px; margin: 50px 50px 0px 50px; background: url(/Content/images/hospital.jpg) no-repeat center center; background-size: contain;  }
+.hospital-list-width .recommend-hospital .r-h-list a span:nth-of-type(2) { width: 670px; height: 280px; }
+.hospital-list-width .recommend-hospital .r-h-list a span:nth-of-type(2) h3 { margin-top: 70px; margin-bottom: 30px;font-size: 44px; font-weight: normal; color: #333333; }
+.hospital-list-width .recommend-hospital .r-h-list a span:nth-of-type(2) p { font-size: 40px; color: #999999; }
+.hospital-list-width .recommend-hospital .r-h-list a span:nth-of-type(3) { width: 110px; height: 280px; background: url(/Content/images/circle_arrow.png) no-repeat center center; }
+
+.hospital-list-width .hospital-condition { position: fixed; width: 1080px; top: 145px; left: 50%; margin-left: -540px; }
+.hospital-list-width .hospital-condition a { width: 539px; height: 120px; border-bottom: #42a437 1px solid; text-align: center; line-height: 120px; font-size: px; color: #666666; cursor: pointer; background: #ffffff url(images/icon_triangle_down.png) no-repeat; background-position: 350px center;  }
+.hospital-list-width .hospital-condition a:active { background-color: #e5e5e5; }
+
+/* CSS collection-width */
+.header-collection h1 {background-image: url(/Content/images/icon_collection_page.png); background-position:400px center; background-repeat: no-repeat; background-size: auto 54px;}
+.collection-width .collection-kind a { display: block; float: left; width: 480px; height: 200px;  border: 1px solid #42a437; border-radius: 20px; margin-left: 40px; margin-top: 30px; box-sizing: border-box; background-color: #ffffff;
+}
+.collection-width .collection-kind a:active { background-color: #e5e5e5; }
+.collection-width .collection-kind a span { width: 140px; height: 140px; margin: 30px 30px 0px 80px;  background-size: 140px 140px; }
+.collection-width .collection-kind a:nth-of-type(1) span { background-image: url(/Content/images/icon_hospital.png);}
+.collection-width .collection-kind a:nth-of-type(2) span { background-image: url(/Content/images/icon_disease.png);}
+.collection-width .collection-kind a:nth-of-type(3) span { background-image:url(/Content/images/icon_question.png);}
+.collection-width .collection-kind a:nth-of-type(4) span { background-image:url(/Content/images/icon_collection_news.png);}
+.collection-width .collection-kind a h3 { font-size: 44px; line-height: 200px; color: #3333333; font-weight: normal; }
+
+/* CSS hospital-collection-width */
+.hospital-collection-width .recommend-hospital .r-h-list { margin-bottom: 3px; width: 100%; background-color: #ffffff;}
+.hospital-collection-width .recommend-hospital .r-h-list a { display: block;  height: 280px;   }
+.hospital-collection-width .recommend-hospital .r-h-list a span:nth-of-type(1) { width: 180px; height: 180px; margin: 50px 50px 0px 10px; background:no-repeat center center; background-size: contain;  }
+.hospital-collection-width .recommend-hospital .r-h-list a span:nth-of-type(2) { width: 670px; height: 280px; margin-right: 30px; }
+.hospital-collection-width .recommend-hospital .r-h-list a span:nth-of-type(2) h3 { margin-top: 70px; margin-bottom: 30px;font-size: 44px; font-weight: normal; color: #333333; }
+.hospital-collection-width .recommend-hospital .r-h-list a span:nth-of-type(3) p { font-size: 40px; color: #999999; }
+
+/* CSS disease-collection-width */
+.disease-collection-width .recommend-hospital .r-h-list { margin-bottom: 3px; width: 100%; background-color: #ffffff;}
+.disease-collection-width .recommend-hospital .r-h-list a { display: block;  height: 280px;   }
+.disease-collection-width .recommend-hospital .r-h-list a span:nth-of-type(1) { width: 240px; height: 180px; margin: 50px 30px 0px 10px; }
+.disease-collection-width .recommend-hospital .r-h-list a span:nth-of-type(2) { width: 630px; height: 280px; margin-right: 30px; }
+.disease-collection-width .recommend-hospital .r-h-list a span:nth-of-type(2) h3 { margin-top: 70px; margin-bottom: 30px;font-size: 44px; font-weight: normal; color: #333333; }
+.disease-collection-width .recommend-hospital .r-h-list a span:nth-of-type(2) p { font-size: 40px; color: #999999; }
+
+.hospital-details-width .hospital-content {width: 100%; height: 280px; background-color: #ffffff; margin-bottom: 3px; }
+.hospital-details-width .hospital-content .logo-hospital { width: 180px; height: 180px; margin: 50px 50px 0px 50px; background: no-repeat center center; background-size: contain; }
+.hospital-details-width .hospital-content .intro-hospital { width: 700px; height: 280px;  }
+.hospital-details-width .hospital-content .intro-hospital h3 { font-size: 42px; color: #333333; font-weight: normal; margin-top: 70px; }
+.hospital-details-width .hospital-content .intro-hospital a { display: block; height: 100px; line-height: 100px; font-size: 40px; color: #999999; }
+.hospital-details-width .hospital-content .intro-hospital a b { color: #42a437; font-weight: normal; }
+.hospital-details-width .hospital-menu a { height: 120px; width: 50%; box-sizing: border-box; text-align:center; line-height: 120px; color: #42a437; background-color: #ffffff; }
+.hospital-details-width .hospital-menu a:active { background-color:#e5e5e5; }
+.hospital-details-width .hospital-menu .contact-way { border-right: 1px solid #f2f2f2; }
+.hospital-details-width .hospital-menu .answer { border-left: 2px solid #f2f2f2; }
+
+/* CSS hospital-details-width */
+.hospital-details-width .expert-container .expert-title {display: block; width: 100%; height: 120px; line-height: 120px; box-sizing: border-box; padding: 0px 30px; background-color: #ffffff; }
+.hospital-details-width .expert-container .expert-title:active { background-color: #e5e5e5; }
+.hospital-details-width .expert-container .expert-list { width: 100%; height: 300px; margin-top: 3px; background-color: #ffffff; box-sizing: border-box; padding: 50px 0px 50px 80px; }
+.hospital-details-width .expert-container .expert-list a { display:block; float: left; width: 200px; height: 200px; margin-right: 40px; border-radius: 100px; background: no-repeat center center; background-size: contain; }
+.hospital-details-width .answer-container .answer-title {display: block; width: 100%; height: 120px; line-height: 120px; box-sizing: border-box; padding: 0px 30px; background-color: #ffffff; }
+.hospital-details-width .answer-container .answer-title:active { background-color: #e5e5e5; }
+.hospital-details-width .answer-container .answer-list li a { display: block; width: 100%; margin-top: 3px; box-sizing: border-box; padding-left: 30px; background: #ffffff url(/Content/images/icon_arrow_132.png) no-repeat center right; }
+.hospital-details-width .answer-container .answer-list li a p { width: 900px; height: 132px; font-size: 42px; color: #666666 ; line-height: 132px;  }
+.hospital-details-width .answer-container .answer-list li a:active { background-color: #e5e5e5; }
+
+/* CSS hospital-intro-width */
+.hospital-intro-width { overflow: hidden; }
+.hospital-intro-width .hospital-intro-box { width: 1000px; box-sizing:border-box; margin: 40px auto 0px auto; padding:40px; background-color: #ffffff; border-radius:10px; } 
+.hospital-intro-width .hospital-intro-box p { text-indent:2em; font-size: 42px; color: #666666; line-height: 66px; }
+
+/* hospital-contactway-width */
+.hospital-contactway-width { overflow: hidden; }
+.hospital-contactway-width .hospital-contactway-box { width: 1000px; box-sizing:border-box; margin: 40px auto 0px auto; padding:40px; background-color: #ffffff; border-radius:10px; height: 300px; font-size: 44px; color: #333333; line-height: 60px; } 
+.hospital-contactway-width .hospital-contactway-box li b { color: #999999; font-weight: normal;  }
+
+/* expert-details-width */
+.expert-details-width .essential-intro-box { width: 1080px; height: 320px; background-color: #ffffff; }
+.expert-details-width .essential-intro-box .expert-img { width: 260px; height: 260px; margin: 30px; background-size:contain; background-position: center center; background-repeat:no-repeat;  }
+.expert-details-width .essential-intro-box .expert-else { height: 260px; width:670px; margin-top: 30px; position: relative;  }
+.expert-details-width .essential-intro-box .expert-else .expert-name { font-size: 44px; color: #333333; width: 100%; }
+.expert-details-width .essential-intro-box .expert-else .answer-button { bottom: 0px; left: 0px; }
+.expert-details-width .essential-intro-box .expert-else .answer-button a { display: block; width: 160px; height: 80px; border-radius: 4px; font-size: 30px; color: #ffffff; text-align: center; line-height: 80px; background-color: #42a437;} 
+.expert-details-width .essential-intro-box .expert-else .answer-button a:active { background-color: #388a2f; }
+.expert-details-width .work-unit { width: 100%; padding: 40px 0px; background-color: #ffffff; font-size: 42px; color: #333333;  }
+.expert-details-width .work-unit .work-unit-title { width: 260px; text-align: center; }
+.expert-details-width .work-unit .work-unit-name { width: 820px; }
+.expert-details-width .work-position { width: 100%; padding: 40px 0px; background-color: #ffffff; font-size: 42px; color: #333333;  }
+.expert-details-width .work-position .work-position-title { width: 260px; text-align: center; }
+.expert-details-width .work-position .work-position-name { width: 820px; }
+.expert-details-width .field-box h3 { width: 100%; height: 120px; line-height: 120px; box-sizing: border-box; padding: 0px 30px; font-size: 44px; color: #333333; font-weight: normal; background-color: #ffffff;  }
+.expert-details-width .field-box p { width: 100%; box-sizing: border-box; padding: 30px 30px; font-size: 42px; text-indent: 2em; color: #666666; background-color: #ffffff; }
+.expert-details-width .personal-brief-box h3 { width: 100%; height: 120px; line-height: 120px; box-sizing: border-box; padding: 0px 30px; font-size: 44px; color: #333333; font-weight: normal; background-color: #ffffff;  }
+.expert-details-width .personal-brief-box p { width: 100%; box-sizing: border-box; padding: 30px 30px; font-size: 42px; text-indent: 2em; color: #666666; background-color: #ffffff; }
+.expert-details-width .join-issue .join-issue-title { display: block; width: 100%; height: 120px; background-color: #ffffff; line-height: 120px; box-sizing: border-box; padding: 0px 30px; }
+.expert-details-width .join-issue .join-issue-title:active { background-color: #e5e5e5; }
+.expert-details-width .join-issue .join-issue-list li a { display: block; width: 100%; height: 132px; margin-bottom: 3px; line-height: 132px; font-size: 42px; color:#666666; background: #ffffff url(/Content/images/icon_arrow_132.png) no-repeat right center; box-sizing: border-box; padding: 0px 162px 0px 30px;  } 
+.expert-details-width .join-issue .join-issue-list li a:active { background-color: #e5e5e5; }
+
+/* expert-list-width */
+.expert-list-width .expert-list-box li a { display: block; width: 100%; height: 320px; box-sizing: border-box; padding: 30px; margin-bottom: 3px; background: #ffffff url(/Content/images/icon_arrow_132.png) no-repeat right center; }
+.expert-list-width .expert-list-box li a:active { background-color: #e5e5e5; }
+.expert-list-width .expert-list-box li a .e-l-pic { width: 260px; height: 260px; background-size:contain;  }
+.expert-list-width .expert-list-box li a ul li { width: 620px; line-height: 68px;  }
+
+/* expert-collection-width */
+.expert-collection-width .expert-collection-box .expert-collection-list { width: 100%; height: 320px; box-sizing: border-box; padding: 30px 30px 30px 0px; background-color: #ffffff; margin-bottom: 3px;  }
+.expert-collection-width .expert-collection-box li a .e-c-pic { width: 260px; height: 260px; background-size:contain; } 
+.expert-collection-width .expert-collection-box li a ul li { width: 600px; line-height: 68px; }
+
+/* answer-list-width */
+.answer-list-width .answer-condition { position: fixed; width: 1080px; top: 145px; left: 50%; margin-left: -540px; }
+.answer-list-width .answer-condition .basis-select { display: block; width: 539px; height: 120px; border-bottom: #42a437 1px solid; text-align: center; line-height: 120px; font-size: 42px; color: #666666; cursor: pointer; background-color: #ffffff;  }
+.answer-list-width .answer-condition .basis-select:active { background-color: #e5e5e5;} 
+.basis-area-c,.basis-crop-c { background: url(/Content/images/icon_triangle_down.png) no-repeat; background-position: right center; box-sizing: border-box; padding: 0px 50px 0px 0px;  }
+.answer-list-width .answer-condition .crop-select-box,.answer-list-width .answer-condition .area-select-box { position: absolute; z-index: 9; top: 120px; left: 0px; width: 100%; height: 1500px; border: 1px solid #42a437; box-sizing: border-box; background-color: #ebebeb; overflow-y:scroll; display: none; }
+.answer-list-width .answer-condition .crop-select-box .item,.answer-list-width .answer-condition .area-select-box .item { display: block; float: left; width: 320px; height: 132px; margin-bottom: 30px; margin-left: 30px;  color:#333333; border: 2px solid #42a437; box-sizing: border-box; border-radius: 10px; background-color: #ffffff; text-align: center; line-height: 132px; }
+.answer-list-width .answer-condition .crop-select-box .item:active { background-color: #42a437; color: #ffffff; }
+.answer-list-width .answer-condition .area-select-box .item:active { background-color: #42a437; color: #ffffff; }
+.answer-list-width .answer-condition .crop-select-box h3,.answer-list-width .answer-condition .area-select-box h3 { font-size: 44px; color: #999999; margin-left: 30px; height: 120px; line-height: 120px; font-weight: normal;  }
+.answer-list-width .answer-condition .area-select-box .city-second-list { display: none; }
+
+.answer-list-width .hot-question .h-q-list { margin-bottom: 3px; }
+.answer-list-width .hot-question .h-q-list a { display: block; width: 100%; background-color: #ffffff; }
+.answer-list-width .hot-question .h-q-list a:active { background-color: #e5e5e5; }
+.answer-list-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; background: url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg) no-repeat center center; background-size: cover; }
+.answer-list-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(2) { width: 400px; }
+.answer-list-width .hot-question .h-q-list a ul .first-floor span:nth-of-type(3) { width: 400px; text-align: right; }
+.answer-list-width .hot-question .h-q-list a ul .second-floor p { width: 1020px; }
+.answer-list-width .hot-question .h-q-list a ul .third-floor span:nth-of-type(1) { padding-left: 64px; background-image: url(/Content/images/icon_message.png); background-repeat:no-repeat; background-position: left center;}
+
+/* answer-tiwen-width */
+.answer-tiwen-width .tiwen-item { width: 100%; height: 132px; margin-bottom: 3px; font-size: 42px; color: #333333; line-height: 132px; background-color: #ffffff;  }
+.answer-tiwen-width .tiwen-item span:nth-of-type(1) {  width: 280px; height: 132px; text-align: center; }
+.answer-tiwen-width .add-crop .crop-select,.answer-tiwen-width .area-city .area-select { height: 132px; line-height: 132px; font-size: 42px; color: #999999; box-sizing: border-box; padding: 0px 50px 0px 0px; background-image: url(/Content/images/icon_triangle_down.png); background-repeat:no-repeat; background-position: right center; }
+.answer-tiwen-width .add-crop .crop-select-box,.answer-tiwen-width .area-city .area-select-box { position: absolute; z-index: 9; top: 132px; left: 0px; display: none; width: 100%; height: 1500px; border: 1px solid #42a437; box-sizing: border-box; background-color: #ebebeb; overflow-y:scroll; }
+.answer-tiwen-width .add-crop .crop-select-box .item,.answer-tiwen-width .area-city .area-select-box .item { display: block; float: left; width: 320px; height: 132px; margin-bottom: 30px; margin-left: 30px;  color:#333333; border: 2px solid #42a437; box-sizing: border-box; border-radius: 10px; background-color: #ffffff; text-align: center; line-height: 132px; }
+.answer-tiwen-width .add-crop .crop-select-box .item:active { background-color: #42a437; color: #ffffff;  }
+.answer-tiwen-width .add-crop .crop-select-box h3,.answer-tiwen-width .area-city .area-select-box h3{ font-size: 44px; color: #999999; margin-left: 30px; height: 120px; line-height: 120px; font-weight: normal; }
+
+.answer-tiwen-width .area-city .area-select-box .city-second-list { display: none; }
+
+.answer-tiwen-width .detailed-adress input, .answer-tiwen-width .wea-con input, .answer-tiwen-width .use-fertilizer input { width: 700px; height: 92px; margin-top: 20px; line-height: 92px; font-size: 42px; color: #999999; box-sizing: border-box; padding: 0px 30px; border: solid 1px #cccccc; }
+
+.answer-tiwen-width .wenti-detail .wenti-detail-title { width: 100%; height: 120px; box-sizing: border-box; padding: 0px 30px; font-size: 44px; line-height: 120px; color: #333333; }
+.answer-tiwen-width .wenti-detail .wenti-detail-input { width: 1020px; height: 600px; margin-left: 30px; border: 1px solid #42a437; box-sizing: border-box; padding: 30px; font-size: 42px; color: #999999; }
+
+.answer-tiwen-width .invite-expert .expert-select { display: block; width: 800px; height: 132px; line-height: 132px; background-image: url(/Content/images/icon_arrowright_999999.png); background-repeat: no-repeat; background-position: right center; box-sizing: border-box; padding: 0px 70px 0px 0px; text-align: right; color: #999999; }
+
+/* answer-collection-width */
+.answer-collection-width .answer-collection-box .answer-list { width: 100%; height: 245px; background-color: #ffffff; margin-bottom: 3px; }  
+.answer-collection-width .answer-collection-box .answer-list .answer-content .user-pic { width: 120px; height: 120px; border-radius: 60px; background-size: contain; background-repeat: no-repeat; background-position: center center; }
+.answer-collection-width .answer-collection-box .answer-list .answer-content .user-infor { margin-left: 30px; width: 600px; }
+.answer-collection-width .answer-collection-box .answer-list .answer-content ul .collection-tiwen p { width: 850px; }
+
+/* answer-details-width */
+.answer-details-width .a-d-basic { height: 180px; width: 100%; background-color: #ffffff; }
+.answer-details-width .a-d-basic span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; margin: 30px 30px 0px 30px; }
+.answer-details-width .a-d-basic span:nth-of-type(2) { width: 500px; }
+.answer-details-width .a-d-basic span:nth-of-type(3) { width: 340px; text-align: right; }
+.answer-details-width .middle-list { width: 100%; padding: 32px 0px; font-size: 42px; background-color: #ffffff;  }
+.answer-details-width .middle-list .title { color: #999999; width: 280px; text-align: center;  }
+.answer-details-width .middle-list .content { width: 770px; }
+.answer-details-width .expert-jieda { background-color: #ffffff; box-sizing: border-box; padding: 30px; background-color: #ffffff;  } 
+.answer-details-width .expert-jieda .ex-jieda-basic span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; }
+.answer-details-width .expert-jieda .ex-jieda-basic span:nth-of-type(2) { width: 500px; }
+.answer-details-width .expert-jieda .ex-jieda-basic span:nth-of-type(3) { width: 340px; text-align: right; }
+.answer-details-width .expert-jieda .daan-box { font-size: 42px; color: #666666; margin-left: 150px; width: 900px; box-sizing:border-box; padding-right: 30px; }
+.answer-details-width .wangyou-jieda { background-color: #ffffff; box-sizing: border-box; padding: 30px; background-color: #ffffff;  } 
+.answer-details-width .wangyou-jieda .wy-jieda-basic span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; }
+.answer-details-width .wangyou-jieda .wy-jieda-basic span:nth-of-type(2) { width: 500px; }
+.answer-details-width .wangyou-jieda .wy-jieda-basic span:nth-of-type(3) { width: 340px; text-align: right; }
+.answer-details-width .wangyou-jieda .daan-box { font-size: 42px; color: #666666; margin-left: 150px; width: 900px; box-sizing:border-box; padding-right: 30px; }
+.answer-details-width .wlhd-box { bottom: 0px; left: 50%; width: 1080px; margin-left: -540px; height: 144px; background-color: #ffffff; border-top: #42a437 1px solid; }
+.answer-details-width .wlhd-box .wlhd-button  { display: block; width: 980px; height: 92px; background-color: #42a437; font-size: 42px; line-height: 92px; color: #ffffff; text-align: center; margin: 26px 50px; border-radius: 10px;  }
+.answer-details-width .wlhd-box .wlhd-button:active { background-color: #388a2f; }
+
+/* answer-huida-width */
+.answer-huida-width .chief-answer { margin-top: 174px; width: 100%; padding: 32px 0px; font-size: 42px; background-color: #ffffff;  }
+.answer-huida-width .chief-answer .title { color: #999999; width: 280px; text-align: center;  }
+.answer-huida-width .chief-answer .content { width: 770px; }
+.answer-huida-width .wlhd-container { width: 100%; box-sizing: border-box; padding: 0px 30px; }
+.answer-huida-width .wlhd-container h3 { width: 100%; height: 120px; line-height: 120px; font-weight: normal; font-size: 42px; color: #333333; }
+.answer-huida-width .wlhd-container .wlhd-container-shuru { width: 100%; border: 1px solid #42a437; height: 500px; background-color: #ffffff; box-sizing: border-box; padding: 30px 30px; color: #999999; font-size: 42px;  }
+.answer-huida-width .wlhd-container .wlhd-sumbit { display: block; background-color: #42a437; width: 100%; height: 132px; border-radius: 10px; text-align:center; line-height: 132px; font-size: 42px; color: #ffffff; }
+.answer-huida-width .wlhd-container .wlhd-sumbit:active { background-color: #388a2f; }
+
+/* register-width */
+.register-width { width: 1080px; height: 1920px; background-image: url(/Content/images/pic_bg.jpg); overflow: hidden; }
+.register-width .title { font-size: 100px; color: #ffffff; text-align: center; width: 100%; margin: 300px 0px 200px 0px;  }
+.register-width .write-box { width: 1000px; margin: auto; font-size: 42px;  } 
+.register-width .write-box input { width: 1000px; height: 132px; border-radius: 20px; border: 3px solid #ffffff; color: #cccccc; margin-bottom: 30px; font-size: 42px; background-color: transparent; box-sizing: border-box; padding: 0px 30px; }
+.register-width .write-box .register-button { display: block;  width: 1000px; height: 132px; text-align: center; line-height:132px; background-color: #42a437; border-radius: 20px; color: #ffffff;}  
+.register-width .write-box .register-button:active { background-color: #388a2f; }
+.register-width .rightnow-login { display: block; font-size: 42px; color: #ffffff;  width: 100%; text-align: center; margin-top: 60px; }
+
+
+/* login-width */
+.login-width { width: 1080px; height: 1920px; background-image: url(/Content/images/pic_bg.jpg); overflow: hidden; }
+.login-width .title { font-size: 100px; color: #ffffff; text-align: center; width: 100%; margin: 300px 0px 200px 0px;  }
+.login-width .login-num-box,.login-width .login-card-box { width: 1000px; margin: auto; font-size: 42px;  } 
+.login-width .login-num-box input,.login-width .login-card-box input { width: 1000px; height: 132px; border-radius: 20px; border: 3px solid #ffffff; color: #cccccc; margin-bottom: 30px; font-size: 42px; background-color: transparent; box-sizing: border-box; padding: 0px 30px; }
+.login-width .register-button { display: block;  width: 1000px; height: 132px; text-align: center; line-height:132px; background-color: #42a437; border-radius: 20px; color: #ffffff;}  
+.login-width .register-button:active { background-color: #388a2f; }
+.login-width .register-else { margin-top: 60px; }
+.login-width .register-else a { display: block; font-size: 42px; color: #ffffff;  width: 100%; text-align: center; }
+.login-width .register-else .change-card { margin-top: 400px; }
+.login-width .register-else .change-num { margin-top: 400px; }
+
+.login-width .login-card { display: none; }
+
+/* feedback-width */
+.feedback-width .feedback-box { width: 1000px; height: 600px; margin: 40px 40px 80px 40px; color: #999999; font-size: 42px; box-sizing: border-box; padding: 30px; border: solid #42a437 1px; border-radius: 10px; }
+.feedback-width .sumbit-btn { display: block; width: 1000px; height: 132px; margin-left: 40px; background-color: #42a437; border-radius: 10px; font-size: 42px; text-align: center; color: #ffffff; line-height: 132px;  }
+.feedback-width .sumbit-btn:active { background-color: #388a2f; }
+
+/* wddt-width */
+.wddt-width .wd-condition { top: 145px; left: 50%; width: 1080px; margin-left: -540px;   } 
+.wddt-width .wd-condition span { height: 120px; width: 50%; font-size: 42px; color: #999999; background-color: #fafafa; line-height: 120px; text-align: center; box-sizing: border-box;  }
+.wddt-width .wd-condition .wd-selected{ color: #42a437; border-bottom: #42a437 3px solid;}
+
+.wddt-width .wddt-list-box { padding-top: 120px; }
+.wddt-width .wddt-list-box .hot-question .h-q-list { margin-bottom: 3px; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a { display: block; width: 100%; background-color: #ffffff; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a:active { background-color: #e5e5e5; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a ul .first-floor span:nth-of-type(1) { width: 120px; height: 120px; border-radius: 60px; background: no-repeat center center; background-size: cover; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a ul .first-floor span:nth-of-type(2) { width: 400px; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a ul .first-floor span:nth-of-type(3) { width: 400px; text-align: right; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a ul .second-floor p { width: 1020px; }
+.wddt-width .wddt-list-box .hot-question .h-q-list a ul .third-floor span:nth-of-type(1) { padding-left: 64px; background-image: url(/Content/images/icon_message.png); background-repeat:no-repeat; background-position: left center;}
+.wddt-width .wddt-list-box .hot-question:nth-of-type(2) { display: none; }
+
+/* basic-infor-width */
+.basic-infor-width .user-pic-box { width: 1080px; height: 280px; background-color: #ffffff; overflow: hidden; }
+.basic-infor-width .user-pic-box .user-pic { display: block; width: 160px; height: 160px; margin: 60px 60px 0px 60px; border-radius: 80px; background: url(/Content/images/icon_zhanwei_user@3x.png) center center no-repeat; background-size: cover; }
+.basic-infor-width .user-infor-box .user-infor-list { width: 100%; height: 132px; margin-bottom: 3px;  color: #333333; font-size: 42px; line-height: 132px; box-sizing: border-box; padding: 0px 30px; background-color: #ffffff; }
+.basic-infor-width .user-infor-box .user-infor-list:nth-of-type(2) .write-name { width: 600px; height: 92px; margin-top: 20px; line-height: 92px; border: none; text-align:right; color: #999999; font-size: 42px; }
+.basic-infor-width .user-infor-box .user-infor-list .gender-select-box .gender-kuang { width: 62px; height: 62px; margin-top: 35px; border-radius: 8px; box-sizing:border-box; border: 3px solid #42a437;}
+.basic-infor-width .user-infor-box .user-infor-list .gender-select-box .gender-selected { border: none; background: url(/Content/images/bg_gender_selected.png) center center no-repeat; background-size: 62px 62px; }
+.basic-infor-width .user-infor-box .user-infor-list .gender-select-box .genter-zi { margin-left: 10px;}
+.basic-infor-width .user-infor-box .user-infor-list .area-select-box span { width: 280px; height: 92px; box-sizing: border-box; border: solid 3px #42a437; border-radius: 10px; font-size: 38px; text-align: center; line-height: 92px; color: #999999;  }

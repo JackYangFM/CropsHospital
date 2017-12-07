@@ -1,0 +1,18 @@
+﻿@model Hospital.Terminal.Models.HospitalIndexModel
+@{
+    ViewBag.Title = "医院列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>庄稼医院列表</h2>
+
+@if (Model.HospitalList != null && Model.HospitalList.Count > 0)
+{
+    foreach (var hospitalInfo in Model.HospitalList)
+    {
+        <div>
+            <h3><a href="/hospital/Detail/@hospitalInfo.HospitalId/">@hospitalInfo.HospitalName</a> </h3>
+            <div>@hospitalInfo.Brief</div>
+        </div>
+    }
+}

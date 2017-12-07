@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74681149-1D95-46D0-A3F4-B5985AC25487}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hospital.BLL</RootNamespace>
+    <AssemblyName>Hospital.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AskInfoContract.cs" />
+    <Compile Include="AskTypeContract.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="CategoryContract.cs" />
+    <Compile Include="CommonAreaContract.cs" />
+    <Compile Include="CommonCityContract.cs" />
+    <Compile Include="CommonProvinceContract.cs" />
+    <Compile Include="ExpertInfoContract.cs" />
+    <Compile Include="ExpertPlantRelationContract.cs" />
+    <Compile Include="HospitalInfoContract.cs" />
+    <Compile Include="HospitalPlantRelationContract.cs" />
+    <Compile Include="MemberInfoContract.cs" />
+    <Compile Include="PathogenyImageContract.cs" />
+    <Compile Include="PathogenyInfoContract.cs" />
+    <Compile Include="PlantInfoContract.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionImageContract.cs" />
+    <Compile Include="QuestionInfoContract.cs" />
+    <Compile Include="ReplyExpertContract.cs" />
+    <Compile Include="ReplyMemberContract.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hospital.Base\Hospital.Base.csproj">
+      <Project>{0e295f0d-0c3d-40ae-a6cf-94538ce42c2c}</Project>
+      <Name>Hospital.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DAL\Hospital.DAL.csproj">
+      <Project>{41f1566b-4955-428d-acd3-5ad39dd06268}</Project>
+      <Name>Hospital.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DataModel\Hospital.DataModel.csproj">
+      <Project>{b1318a61-5d95-41e4-a963-34d2719c4714}</Project>
+      <Name>Hospital.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DBHelper\Hospital.DBHelper.csproj">
+      <Project>{69c3b603-511d-443c-9619-e5e4545fd21b}</Project>
+      <Name>Hospital.DBHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.IBLL\Hospital.IBLL.csproj">
+      <Project>{c08a836d-937c-4e6a-b0bb-703268230ae3}</Project>
+      <Name>Hospital.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.IDAL\Hospital.IDAL.csproj">
+      <Project>{1bc88e38-ab6f-427e-bd8c-a3df38edef4e}</Project>
+      <Name>Hospital.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.Utility\Hospital.Utility.csproj">
+      <Project>{5c5ba46a-f8d8-4729-a5b8-33b2a6d3a696}</Project>
+      <Name>Hospital.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.ViewModel\Hospital.ViewModel.csproj">
+      <Project>{bbb8499a-6f9c-401d-b9ba-2b60ef4de575}</Project>
+      <Name>Hospital.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,204 @@
+﻿using System;
+using System.ComponentModel.Composition;
+using System.IO;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
+using Hospital.IBLL;
+using Hospital.Terminal.Models;
+using Hospital.Utility;
+using Hospital.ViewModel;
+
+namespace Hospital.Terminal.Controllers
+{
+    [Export]
+    public class LsController : Controller
+    {
+        [Import]
+        public IPathogenyInfoContract PathogenyInfoContract { get; set; }
+
+        [Import]
+        public ICategoryContract CategoryContract { get; set; }
+
+        [Import]
+        public IPathogenyImageContract PathogenyImageContract { get; set; }
+
+
+        /// <summary>
+        /// 新增病虫害页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Index()
+        {
+            var model = new LsIndexModel();
+
+            model.CategoryList = CategoryContract.GetCategoryList(0, 1);
+            model.ItemNumber = Tool.GetCreateNumber("ItemNumber");
+            return View(model);
+        }
+
+        /// <summary>
+        /// 异步加载分类
+        /// </summary>
+        /// <param name="pid"></param>
+        /// <param name="grade"></param>
+        /// <returns></returns>
+        public JsonResult AsyncCategotry(int pid=1,int grade=2)
+        {
+            var list = CategoryContract.GetCategoryList(pid, grade);
+            var sb = new StringBuilder();
+            if (list!=null && list.Count>0)
+            {
+                foreach (var category in list)
+                {
+                    sb.AppendFormat("<option value=\"{0}\">{1}</option>",category.Id,category.CategoryName);
+                }
+            }
+            return Json(new {Result = true, Msg = sb.ToString()});
+        }
+
+        /// <summary>
+        /// 保存信息
+        /// </summary>
+        /// <param name="itemNumber"></param>
+        /// <param name="categoryId"></param>
+        /// <param name="itemType"></param>
+        /// <param name="itemName"></param>
+        /// <param name="englishName"></param>
+        /// <param name="nickName"></param>
+        /// <param name="brief"></param>
+        /// <param name="attribute1"></param>
+        /// <param name="attribute2"></param>
+        /// <param name="attribute3"></param>
+        /// <param name="attribute4"></param>
+        /// <param name="attribute5"></param>
+        /// <param name="attribute6"></param>
+        /// <param name="attribute7"></param>
+        /// <param name="attribute8"></param>
+        /// <param name="attribute9"></param>
+        /// <param name="attribute10"></param>
+        /// <param name="attribute11"></param>
+        /// <returns></returns>
+        public JsonResult SavePathogeny(string itemNumber,int categoryId, int itemType, string itemName, string englishName, string nickName, string brief, string attribute1, string attribute2, string attribute3, string attribute4, string attribute5, string attribute6, string attribute7, string attribute8, string attribute9, string attribute10, string attribute11)
+        {
+            var isExists = PathogenyInfoContract.ExistsPathogenyInfo(itemNumber);
+            if (isExists)
+            {
+                return Json(new {Result = false, Msg = "编号已经存在!"});
+            }
+
+            var info = new PathogenyInfo
+            {
+                ItemNumber = itemNumber,
+                CategoryId = categoryId,
+                ItemType = itemType,
+                ItemName = itemName,
+                ItemEnglishName = englishName,
+                ItemNickName = nickName,
+                Brief = brief,
+                Attribute1 = attribute1,
+                Attribute2 = attribute2,
+                Attribute3 = attribute3,
+                Attribute4 = attribute4,
+                Attribute5 = attribute5,
+                Attribute6 = attribute6,
+                Attribute7 = attribute7,
+                Attribute8 = attribute8,
+                Attribute9 = attribute9,
+                Attribute10 = attribute10,
+                Attribute11 = attribute11,
+                CreateTime = DateTime.Now
+            };
+
+            var result = PathogenyInfoContract.SavePathogenyInfo(info);
+            if (result>0)
+            {
+                return Json(new { Result = true, Msg = itemNumber });
+            }
+            return Json(new {Result = false, Msg = "保存失败"});
+        }
+
+
+        #region 保存商品图片
+        [AcceptVerbs(HttpVerbs.Post)]
+        public JsonResult SaveItemImage(HttpPostedFileBase fileData)
+        {
+            if (fileData != null)
+            {
+                try
+                {
+                    var value = Request.Form["ItemNumber"];
+                    // 文件上传后的保存路径
+                    string filePath = "D:/work/Hospital/Terminal/Items/" + value + "/";
+                    if (!Directory.Exists(filePath))
+                    {
+                        Directory.CreateDirectory(filePath);
+                    }
+                    string fileName = Path.GetFileName(fileData.FileName);// 原始文件名称
+                    string fileExtension = Path.GetExtension(fileName); // 文件扩展名
+                    string saveName = Guid.NewGuid().ToString().Replace("-", "") + fileExtension; // 保存文件名称
+
+                    fileData.SaveAs(filePath + saveName);
+                    var itemUrl = "/Items/" + value + "/" + saveName;
+
+                    var imagevm = new PathogenyImage
+                    {
+                        ItemNumber = value,
+                        ImgUrl = itemUrl,
+                    };
+                    PathogenyImageContract.AddPathogenyImage(imagevm);
+                    return Json(new { Result = true, FileName = itemUrl });
+                }
+                catch (Exception ex)
+                {
+                    return Json(new { Result = false, Msg = ex.Message }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json(new { Result = false, Msg = "请选择要上传的文件！" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        #endregion 
+
+        #region 获取图片列表
+        /// <summary>
+        /// 获取商品图片列表
+        /// </summary>
+        /// <param name="itemNumber"></param>
+        /// <returns></returns>
+        public JsonResult GetItemImage(string itemNumber)
+        {
+            var imagelist = PathogenyImageContract.GetPathogenyImageList(itemNumber);
+            if (imagelist != null && imagelist.Count > 0)
+            {
+                var sb = new StringBuilder();
+                foreach (var image in imagelist)
+                {
+                    var imageurl = image.ImgUrl;
+                    sb.AppendFormat(
+                        "<div class=\"imgdiv\"><img src=\"{0}\" style=\"width: 200px; height: 200px;border: 2px solid #cccccc;\" /></div>", imageurl);
+                }
+                return Json(new { Result = true, Msg = sb.ToString() });
+            }
+            return Json(new { Result = true, Msg = "没有图片信息" });
+        }
+        #endregion
+
+
+        /// <summary>
+        /// 加载最后5条数据
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PathogenyList()
+        {
+            var model = new PathogenyListModels();
+            model.PathogenyList = PathogenyInfoContract.GetLastPathogeny();
+            return View(model);
+        }
+
+
+    }
+
+    
+}

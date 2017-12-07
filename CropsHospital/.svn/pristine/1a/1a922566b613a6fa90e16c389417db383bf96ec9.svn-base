@@ -1,0 +1,81 @@
+﻿using System.ComponentModel.Composition;
+using System.Web.Mvc;
+using Hospital.IBLL;
+using Hospital.Terminal.Models;
+using Hospital.Web.Base.Controllers;
+
+namespace Hospital.Terminal.Controllers
+{
+    /// <summary>
+    /// 病虫害库
+    /// </summary>
+    [Export]
+    public class PlantController : BaseController
+    {
+        [Import]
+        public ICategoryContract CategoryContract { get; set; }
+
+        [Import]
+        public IPathogenyInfoContract PathogenyInfoContract { get; set; }
+
+        [Import]
+        public IPathogenyImageContract PathogenyImageContract { get; set; }
+
+
+        /// <summary>
+        /// 分类列表页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Index()
+        {
+            var model = new CategoryIndexModel();
+            model.CategoryList = CategoryContract.GetCategoryList();
+            
+            return View(model);
+        }
+
+        /// <summary>
+        /// 分类二级页
+        /// </summary>
+        /// <param name="cid"></param>
+        /// <returns></returns>
+        public ActionResult Category(int cid)
+        {
+            var model = new CategoryModel();
+            model.MeCategoryList = CategoryContract.MeCategoryList(cid);
+            model.CategoryList = CategoryContract.GetCategoryList(cid, 3);
+            return View(model);
+        }
+
+        /// <summary>
+        /// 病虫害列表
+        /// </summary>
+        /// <param name="cid"></param>
+        /// <returns></returns>
+        public ActionResult ItemList(int cid)
+        {
+            var model = new ItemListModel();
+            model.MeCategoryList = CategoryContract.MeCategoryList(cid);
+            model.PathogenyList = PathogenyInfoContract.GetPathogenyList(cid);
+            return View(model);
+        }
+
+        /// <summary>
+        /// 病虫害详情页
+        /// </summary>
+        /// <param name="itemNumber">编号</param>
+        /// <returns></returns>
+        public ActionResult Detail(string itemNumber)
+        {
+            var model = new PlantDetailModel();
+
+            model.PlantInfo = PathogenyInfoContract.GetPathogenyInfo(itemNumber);
+            model.MeCategoryList = CategoryContract.MeCategoryList(model.PlantInfo.CategoryId);
+            model.PathogenyImageList = PathogenyImageContract.GetPathogenyImageList(itemNumber);
+            return View(model);
+        }
+
+
+
+    }
+}

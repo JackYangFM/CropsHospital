@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "问题详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top answer-first-header rel">
+        <a class="top-back" onclick="GoBack();"></a>
+        <h1>问题详情</h1>
+        <a href="javascript:void(0)" class="top-collection"></a>
+    </header>
+
+    <div class="content-width answer-details-width">
+        <!--基本信息-->
+        <div class="a-d-basic clearfix">
+            <span class="f-left" style="background-image: url(/Content/images/pic_expert.jpg)"></span>
+            <span class="f-left mar-top-30">
+                <div class="fc-333333 fs-42 text-otw">疯狂的小鸟</div>
+                <div class="fc-999999 fs-40 mar-top-10 text-otw">山东省青岛市</div>
+            </span>
+            <span class="f-right fs-38 fc-999999 mar-top-30 mar-right-30 text-otw">2016-06-08</span>
+        </div>
+        <!--基本信息-->
+        <div class="crop-name mar-top-30 clearfix middle-list">
+            <span class="title f-left text-otw">作物名称：</span>
+            <p class="content">玉米</p>
+        </div>
+        <div class="chief-answer mar-top-3 clearfix middle-list">
+            <span class="title f-left text-otw">主要问题：</span>
+            <p class="content f-left">请问，玉米叶子发黄，而且很容易折断，是什么引起的？</p>
+        </div>
+        <div class="wea-condition mar-top-30 clearfix middle-list">
+            <span class="title f-left text-otw">天气状况：</span>
+            <p class="content f-left">刚下完暴雨</p>
+        </div>
+        <div class="use-feiliao mar-top-3 clearfix middle-list">
+            <span class="title f-left text-otw">用肥用料：</span>
+            <p class="content f-left">百草枯</p>
+        </div>
+        <!--解答模块-->
+        <div class="expert-jieda-box mar-top-30">
+            <!--专家解答-->
+            <div class="expert-jieda mar-top-3">
+                <div class="ex-jieda-basic clearfix ">
+                    <span class="f-left mar-right-30" style="background-image: url(/Content/images/pic_expert.jpg)"></span>
+                    <span class="f-left">
+                        <div class="fc-333333 fs-42 text-otw">疯狂的小鸟</div>
+                        <div class="fc-42a437 fs-40 mar-top-10 text-otw">专家解答</div>
+                    </span>
+                    <span class="f-right fs-38 fc-999999 text-otw">2016-06-08</span>
+                </div>
+                <p class="daan-box mar-top-20">玉米叶子发黄，而且很容易折断，主要是由于作物缺少钙造成的...</p>
+            </div>
+            <!--专家解答-->
+            <!--网友解答-->
+            <div class="wangyou-jieda mar-top-3">
+                <div class="wy-jieda-basic clearfix">
+                    <span class="f-left mar-right-30" style="background-image: url(/Content/images/pic_expert.jpg)"></span>
+                    <span class="f-left">
+                        <div class="fc-333333 fs-42 text-otw">疯狂的小鸟</div>
+                        <div class="fc-42a437 fs-40 mar-top-10 text-otw">网友解答</div>
+                    </span>
+                    <span class="f-right fs-38 fc-999999 text-otw">2016-06-08</span>
+                </div>
+                <p class="daan-box mar-top-20">玉米叶子发黄，而且很容易折断，主要是由于作物缺少钙造成的...</p>
+            </div>
+            <!--网友解答-->
+        </div>
+        <!--解答模块-->
+        <div class="wlhd-box po-f">
+            <a href="#" class="wlhd-button">我来回答</a>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <!--控制收藏样式-->
+    <script type="text/javascript">
+        $(".header-top .top-collection").click(function() {
+            $(this).toggleClass("top-collection-selected");
+        });
+    </script>
+    <!--控制收藏样式-->    
+}

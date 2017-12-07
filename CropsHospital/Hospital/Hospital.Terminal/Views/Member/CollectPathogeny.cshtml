@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "CollectPathogeny";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top hospital-collection-header">
+        <a href="/member/collect/"></a>
+        <h1>病虫害收藏列表</h1>
+        <span class="button-delete">删除</span>
+    </header>
+
+    <div class="content-width disease-collection-width" style="margin-top:148px">
+
+        <!--病虫害收藏-->
+        <ul class="recommend-hospital">
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box"><img src="/Content/images/pic_binghai01.jpg" width="240" height="180" /></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">稻瘟病</h3>
+                        <p class="text-otw">稻瘟病是水稻重要病害之一,它会...</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box"><img src="/Content/images/pic_binghai01.jpg" width="240" height="180" /></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">稻瘟病</h3>
+                        <p class="text-otw">稻瘟病是水稻重要病害之一,它会...</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box"><img src="/Content/images/pic_binghai01.jpg" width="240" height="180" /></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">稻瘟病</h3>
+                        <p class="text-otw">稻瘟病是水稻重要病害之一,它会...</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box"><img src="/Content/images/pic_binghai01.jpg" width="240" height="180" /></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">稻瘟病</h3>
+                        <p class="text-otw">稻瘟病是水稻重要病害之一,它会...</p>
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+        <!--病虫害收藏-->
+
+    </div>
+
+</div>
+@section scripts{
+    <script type="text/javascript">
+        //选中
+        $(".delete-collection").click(function () {
+            $(this).toggleClass("delete-selected");
+        });
+
+        //删除
+        $(".button-delete").click(function () {
+            $('.delete-selected').parents('.r-h-list').detach();
+        });
+    </script> 
+}
+

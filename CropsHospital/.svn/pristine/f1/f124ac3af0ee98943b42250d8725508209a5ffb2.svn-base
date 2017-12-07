@@ -1,0 +1,177 @@
+﻿@model Hospital.Terminal.Models.HomeIndexModel
+@{
+    ViewBag.Title = "庄稼医院";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top index-header">
+        <h1>庄稼医院</h1>
+    </header>
+
+    <div class="content-width index-width">
+        <!--大图切换-->
+        <div class="banner" id="b04">
+            <ul>
+                <li><a href="javascript:void(0)"><img src="/Content/images/pic_banner.jpg" width="1080" alt="" /></a></li>
+                <li><a href="javascript:void(0)"><img src="/Content/images/pic_banner.jpg" width="1080" alt="" /></a></li>
+                <li><a href="javascript:void(0)"><img src="/Content/images/pic_banner.jpg" width="1080" alt="" /></a></li>
+                <li><a href="javascript:void(0)"><img src="/Content/images/pic_banner.jpg" width="1080" alt="" /></a></li>
+                <li><a href="javascript:void(0)"><img src="/Content/images/pic_banner.jpg" width="1080" alt="" /></a></li>
+            </ul>
+            <!-- arrow -->
+            <a href="javascript:void(0)" class="unslider-arrow prev" style="background-image: url(/Content/images/arrowl.png)"></a>
+            <a href="javascript:void(0)" class="unslider-arrow next" style="background-image: url(/Content/images/arrowr.png); "></a>
+        </div>
+        <!--大图切换-->
+        <!--按钮选项-->
+        <div class="menu-button clearfix">
+            <a href="javascript:void(0)" class="question b-box" style="border-left:none">我要提问</a>
+            <a href="/hospital/index/" class="hospital b-box">医院列表</a>
+            <a href="/question/index/" class="answer b-box">搜索答案</a>
+            <a href="/plant/index/" class="diease b-box">病虫害库</a>
+        </div>
+        <!--按钮选项-->
+        <!--推荐医院-->
+
+        <ul class="recommend-hospital">
+            <li class="r-h-title">
+                <a class="f-left">推荐医院</a>
+                <a href="/hospital/index/" class="f-left">更多>></a>
+            </li>
+            @if (Model.HospitalList != null && Model.HospitalList.Count > 0)
+            {
+                foreach (var hospitalInfo in Model.HospitalList)
+                {
+                    <li class="r-h-list">
+                        <a href="/hospital/detail/@hospitalInfo.HospitalId/" class="clearfix">
+                            <span class="f-left b-box"></span>
+                            <span class="f-left">
+                                <h3 class="text-otw">@hospitalInfo.HospitalName</h3>
+                                <p class="text-otw">@hospitalInfo.Brief</p>
+                            </span>
+                            <span class="f-left"></span>
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+        <!--推荐医院-->
+        <!--热门问题-->
+        <ul class="hot-question">
+            <li class="h-q-title">
+                <a class="f-left">热门问题</a>
+                <a href="javascript:void(0)" class="f-left">更多>></a>
+            </li>
+            <li class="h-q-list">
+                <a href="javascript:void(0)" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">疯狂的小疯狂的小鸟疯狂的小鸟疯狂的小鸟鸟</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            <li class="h-q-list">
+                <a href="javascript:void(0)" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">12345678901</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            <li class="h-q-list">
+                <a href="javascript:void(0)" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">疯狂的小鸟</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+
+
+        </ul>
+        <!--热门问题-->
+
+    </div>
+
+    <footer class="footer-bottom footer-bottom-index">
+        <a href="/home/index/" class="footer-index" style="color:#42a437;">首页</a>
+        <a href="/member/collect/" class="footer-collection">收藏</a>
+        <a href="/ask/index/" class="footer-news">资讯</a>
+        <a href="/member/index/" class="footer-user">我的</a>
+    </footer>
+
+</div>
+
+
+
+@section scripts{
+    <!--轮播-->
+<script type="text/javascript">
+    var unslider = $('.banner').unslider();
+
+    $('.unslider-arrow').click(function () {
+        var fn = this.className.split(' ')[1];
+
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        var slidey = $('.banner').unslider({
+            speed: 500,
+            delay: 3000,
+            complete: function () { },
+            keys: true,
+            dots: true,
+            fluid: false
+        });
+        data = slidey.data('unslider');
+        data.move(0, function () { });
+    });
+</script>
+<!--轮播-->   
+}
+
+

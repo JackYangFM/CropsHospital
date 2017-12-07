@@ -1,0 +1,167 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.Linq;
+using Hospital.DataModel;
+using Hospital.IBLL;
+using Hospital.IDAL;
+using Hospital.ViewModel;
+
+namespace Hospital.BLL
+{
+    /// <summary>
+    /// 病虫害表
+    /// </summary>
+    [Export(typeof(IPathogenyInfoContract))]
+    public class PathogenyInfoContract : Base, IPathogenyInfoContract
+    {
+        [Import]
+        public IPathogenyInfoRepository PathogenyInfoRepository { get; set; }
+
+        [Import]
+        public IPathogenyImageContract PathogenyImageContract { get; set; }
+
+        /// <summary>
+        /// 通过分类编号获取病虫害列表
+        /// </summary>
+        /// <param name="cid">分类编号</param>
+        /// <returns></returns>
+        public List<PathogenyInfo> GetPathogenyList(int cid)
+        {
+            var pathogenyList = PathogenyInfoRepository.Entities.Where(m => m.CategoryId == cid)
+                .OrderBy(m => m.ItemId)
+                .Select(m => new PathogenyInfo
+                {
+                    ItemId = m.ItemId,
+                    ItemNumber = m.ItemNumber,
+                    CategoryId = m.CategoryId,
+                    ItemType = m.ItemType,
+                    ItemName = m.ItemName,
+                    ItemEnglishName = m.ItemEnglishName,
+                    ItemNickName = m.ItemNickName,
+                    Brief = m.Brief,
+                    Attribute1 = m.Attribute1,
+                    Attribute2 = m.Attribute2,
+                    Attribute3 = m.Attribute3,
+                    Attribute4 = m.Attribute4,
+                    Attribute5 = m.Attribute5,
+                    Attribute6 = m.Attribute6,
+                    Attribute7 = m.Attribute7,
+                    Attribute8 = m.Attribute8,
+                    Attribute9 = m.Attribute9,
+                    Attribute10 = m.Attribute10,
+                    Attribute11 = m.Attribute11,
+                    CreateTime = m.CreateTime
+                }).ToList();
+
+            foreach (var info in pathogenyList)
+            {
+                info.ImageList = PathogenyImageContract.GetPathogenyImageList(info.ItemNumber);
+            }
+
+            return pathogenyList;
+        }
+
+        /// <summary>
+        /// 获取病虫害信息
+        /// </summary>
+        /// <param name="itemNumber">商品编号</param>
+        /// <returns></returns>
+        public PathogenyInfo GetPathogenyInfo(string itemNumber)
+        {
+            return PathogenyInfoRepository.Entities.Where(m => m.ItemNumber == itemNumber).Select(m => new PathogenyInfo
+            {
+                ItemId = m.ItemId,
+                ItemNumber = m.ItemNumber,
+                CategoryId = m.CategoryId,
+                ItemType = m.ItemType,
+                ItemName = m.ItemName,
+                ItemEnglishName = m.ItemEnglishName,
+                ItemNickName = m.ItemNickName,
+                Brief = m.Brief,
+                Attribute1 = m.Attribute1,
+                Attribute2 = m.Attribute2,
+                Attribute3 = m.Attribute3,
+                Attribute4 = m.Attribute4,
+                Attribute5 = m.Attribute5,
+                Attribute6 = m.Attribute6,
+                Attribute7 = m.Attribute7,
+                Attribute8 = m.Attribute8,
+                Attribute9 = m.Attribute9,
+                Attribute10 = m.Attribute10,
+                Attribute11 = m.Attribute11,
+                CreateTime = m.CreateTime
+            }).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int SavePathogenyInfo(PathogenyInfo entity)
+        {
+            var infoEntity = new PathogenyInfoEntity
+            {
+                CategoryId = entity.CategoryId,
+                ItemNumber = entity.ItemNumber,
+                ItemType = entity.ItemType,
+                ItemName = entity.ItemName,
+                ItemEnglishName = entity.ItemEnglishName,
+                ItemNickName = entity.ItemNickName,
+                Brief = entity.Brief.Trim(),
+                Attribute1 = entity.Attribute1.Trim(),
+                Attribute2 = entity.Attribute2.Trim(),
+                Attribute3 = entity.Attribute3.Trim(),
+                Attribute4 = entity.Attribute4.Trim(),
+                Attribute5 = entity.Attribute5.Trim(),
+                Attribute6 = entity.Attribute6.Trim(),
+                Attribute7 = entity.Attribute7.Trim(),
+                Attribute8 = entity.Attribute8.Trim(),
+                Attribute9 = entity.Attribute9.Trim(),
+                Attribute10 = entity.Attribute10.Trim(),
+                Attribute11 = entity.Attribute11.Trim(),
+                CreateTime = entity.CreateTime
+            };
+            var result = PathogenyInfoRepository.Insert(infoEntity)>0;
+            if (result)
+            {
+                return infoEntity.ItemId;
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// 判断是否存在
+        /// </summary>
+        /// <param name="itemNumber"></param>
+        /// <returns></returns>
+        public bool ExistsPathogenyInfo(string itemNumber)
+        {
+            return PathogenyInfoRepository.Entities.Any(m => m.ItemNumber == itemNumber);
+        }
+
+
+        /// <summary>
+        /// 获取最后5条数据（临时）
+        /// </summary>
+        /// <returns></returns>
+        public List<PathogenyInfo> GetLastPathogeny()
+        {
+            var pathogenyList = PathogenyInfoRepository.Entities.OrderByDescending(m => m.ItemId).Take(5).Select(m => new PathogenyInfo
+                {
+                    ItemNumber = m.ItemNumber,
+                    ItemName = m.ItemName,
+                    ItemEnglishName = m.ItemEnglishName,
+                    ItemNickName = m.ItemNickName,
+                    Brief = m.Brief
+                }).ToList();
+
+            foreach (var info in pathogenyList)
+            {
+                info.ImageList = PathogenyImageContract.GetPathogenyImageList(info.ItemNumber);
+            }
+
+            return pathogenyList;
+        }
+    }
+}

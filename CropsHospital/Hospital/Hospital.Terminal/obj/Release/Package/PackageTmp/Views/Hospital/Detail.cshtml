@@ -1,0 +1,77 @@
+﻿@model Hospital.Terminal.Models.HospitalDetailModel
+@{
+    ViewBag.Title = "庄稼医院信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top rel">
+        <a class="top-back" href="/hospital/index/"></a>
+        <h1>医院信息</h1>
+        <span class="top-collection"></span>
+    </header>
+
+    <div class="content-width hospital-details-width">
+        <!--基本信息-->
+        <div class="hospital-content">
+            <span class="f-left logo-hospital" style="background-image:url(/Content/images/logo_hospital.png)"></span>
+            <span class="f-left intro-hospital text-otw">
+                <h3>@Model.Hospital.HospitalName</h3>
+                <a href="/hospital/hospitalinfo/@Model.Hospital.HospitalId/">@Model.Hospital.Brief<b>>></b></a>
+            </span>
+        </div>
+        <!--基本信息-->
+        <!--联系方式-->
+        <div class="hospital-menu clearfix ">
+            <a href="/hospital/contactway/@Model.Hospital.HospitalId/" class="contact-way f-left">联系方式</a>
+            <a href="#" class="answer f-left">我要提问</a>
+
+        </div>
+        <!--联系方式-->
+        <!--专家-->
+        <div class="expert-container mar-top-30">
+            <a class="expert-title clearfix" href="/hospital/expertlist/@Model.Hospital.HospitalId/">
+                <span class="f-left fc-333333 fs-44">本院专家</span>
+                <span class="f-right fc-999999 fs-42">更多>></span>
+            </a>
+            <div class="expert-list">
+                @if (Model.ExpertList != null && Model.ExpertList.Count > 0)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        <a href="/hospital/expertinfo/@Model.ExpertList[i].ExpertId/" style="background-image: url(/Content/images/pic_expert.jpg)"></a>
+                    }
+                }
+            </div>
+        </div>
+        <!--专家-->
+        <!--问题解答-->
+        <div class="answer-container mar-top-30">
+            <a class="answer-title clearfix">
+                <span class="f-left fc-333333 fs-44">问题解答</span>
+                <span class="f-right fc-999999 fs-42">更多>></span>
+            </a>
+            <ul class="answer-list">
+                <li><a href="javascript:void(0)" class="text-otw"><p>苹果树的叶子为什么干枯？</p></a></li>
+                <li><a href="javascript:void(0)" class="text-otw"><p>苹果树的叶子为什么干枯？</p></a></li>
+                <li><a href="javascript:void(0)" class="text-otw"><p>苹果树的叶子为什么干枯？</p></a></li>
+                <li><a href="javascript:void(0)" class="text-otw"><p>苹果树的叶子为什么干枯？</p></a></li>
+                <li><a href="javascript:void(0)" class="text-otw"><p>苹果树的叶子为什么干枯？</p></a></li>
+            </ul>
+        </div>
+        <!--问题解答-->
+    </div>
+
+</div>
+
+<!--控制收藏样式-->
+@section scripts{
+    <script type="text/javascript">
+        $(".header-top .top-collection").click(function () {
+            $(this).toggleClass("top-collection-selected");
+
+        })
+
+    </script>    
+}

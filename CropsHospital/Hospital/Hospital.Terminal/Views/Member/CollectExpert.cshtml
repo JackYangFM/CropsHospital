@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "收藏专家列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top rel">
+        <a href="/member/collect/"></a>
+        <h1>专家收藏</h1>
+        <span class="button-delete">删除</span>
+    </header>
+
+    <div class="content-width expert-collection-width">
+        <ul class="expert-collection-box">
+            <li class="expert-collection-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="f-left mar-left-10 clearfix">
+                    <span class="e-c-pic f-left" style="background-image: url(images/pic_expert.jpg)"></span>
+                    <ul class="f-left mar-top-30 mar-left-30">
+                        <li class="fs-44 fc-333333 text-otw">张大仙</li>
+                        <li class="fs-40 fc-323232 text-otw">北京农页农技研究所</li>
+                        <li class="fs-40 fc-999999 text-otw">高级水稻科作物研究员</li>
+                    </ul>
+                </a>
+            </li>
+            <li class="expert-collection-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="f-left mar-left-10 clearfix">
+                    <span class="e-c-pic f-left" style="background-image: url(images/pic_expert.jpg)"></span>
+                    <ul class="f-left mar-top-30 mar-left-30">
+                        <li class="fs-44 fc-333333 text-otw">张大仙</li>
+                        <li class="fs-40 fc-323232 text-otw">北京农页农技研究所</li>
+                        <li class="fs-40 fc-999999 text-otw">高级水稻科作物研究员</li>
+                    </ul>
+                </a>
+            </li>
+            <li class="expert-collection-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="f-left mar-left-10 clearfix">
+                    <span class="e-c-pic f-left" style="background-image: url(images/pic_expert.jpg)"></span>
+                    <ul class="f-left mar-top-30 mar-left-30">
+                        <li class="fs-44 fc-333333 text-otw">张大仙</li>
+                        <li class="fs-40 fc-323232 text-otw">北京农页农技研究所</li>
+                        <li class="fs-40 fc-999999 text-otw">高级水稻科作物研究员</li>
+                    </ul>
+                </a>
+            </li>
+            <li class="expert-collection-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="f-left mar-left-10 clearfix">
+                    <span class="e-c-pic f-left" style="background-image: url(images/pic_expert.jpg)"></span>
+                    <ul class="f-left mar-top-30 mar-left-30">
+                        <li class="fs-44 fc-333333 text-otw">张大仙</li>
+                        <li class="fs-40 fc-323232 text-otw">北京农页农技研究所</li>
+                        <li class="fs-40 fc-999999 text-otw">高级水稻科作物研究员</li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script>
+    //选中
+    $(".delete-collection").click(function () {
+        $(this).toggleClass("delete-selected");
+    })
+
+    //删除
+    $(".button-delete").click(function () {
+        $('.delete-selected').parents('.expert-collection-list').detach()
+
+    })
+</script> 

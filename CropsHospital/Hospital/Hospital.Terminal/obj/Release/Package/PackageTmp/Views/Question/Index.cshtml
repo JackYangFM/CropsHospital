@@ -1,0 +1,149 @@
+﻿@model Hospital.Terminal.Models.QuestionIndexModel
+@{
+    ViewBag.Title = "问题列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top">
+        <a class="top-back" onclick="GoBack();"></a>
+        <h1>问题列表</h1>
+    </header>
+
+    <div class="content-width answer-list-width" style="margin-top:266px">
+        <div class="answer-condition clearfix">
+            <a class="basis-select basis-area f-left"><span class="basis-area-c">按地区</span></a>
+            <a class="basis-select basis-crop f-right"><span class="basis-crop-c">按作物</span></a>
+            <div class="area-select-box">
+                <div class="">
+                    <h3>浙江</h3>
+                    <div class="city-second-list clearfix">
+                        <a class="item">杭州</a>
+                        <a class="item">宁波</a>
+                        <a class="item">舟山</a>
+                    </div>
+                </div>
+                <div class="">
+                    <h3>江苏</h3>
+                    <div class="city-second-list clearfix">
+                        <a class="item">苏州</a>
+                        <a class="item">金花</a>
+                        <a class="item">扬州</a>
+                    </div>
+                </div>
+            </div>
+            <div class="crop-select-box po-a">
+                <div class="initial-a">
+                    <h3>a</h3>
+                    <div class="clearfix">
+                        <a class="item">水稻</a>
+                        <a class="item">小米</a>
+                        <a class="item">大米</a>
+                    </div>
+                </div>
+                <div class="initial-b">
+                    <h3>b</h3>
+                    <div class="clearfix">
+                        <a class="item">金针菇</a>
+                        <a class="item">小米</a>
+                        <a class="item">大米</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--问题列表-->
+        <ul class="hot-question">
+            <li class="h-q-list">
+                <a href="/question/detail/" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">疯狂的小疯狂的小鸟疯狂的小鸟疯狂的小鸟鸟</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            <li class="h-q-list">
+                <a href="/question/detail/" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">12345678901</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            <li class="h-q-list">
+                <a href="/question/detail/" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">疯狂的小鸟</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            <li class="h-q-list">
+                <a href="/question/detail/" class="clearfix">
+                    <ul>
+                        <li class="first-floor clearfix mar-top-30 mar-bottom-30">
+                            <span class="f-left mar-left-30 "></span>
+                            <span class="f-left mar-left-30 mar-top-5">
+                                <div class="fs-42 fc-333333 text-otw">疯狂的小鸟</div>
+                                <div class="fs-40 fc-999999 text-otw">山东省青岛市</div>
+                            </span>
+                            <span class="f-right mar-right-30 fc-999999 fs-38 text-otw">2016-06-08</span>
+                        </li>
+                        <li class="second-floor">
+                            <p class="mar-left-30 fs-44 fc-333333">请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？请问，玉米叶子发黄是什么引起的？</p>
+                        </li>
+                        <li class="third-floor clearfix mar-top-25 mar-bottom-20">
+                            <span class="f-left mar-left-30 fc-999999">回复<em class="fs-38 fc-999999" style="font-style: normal"> 5</em></span>
+                            <span class="fs-38 fc-42a437 f-right mar-right-30">查看详情</span>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+
+        </ul>
+        <!--问题医院-->
+
+    </div>
+
+</div>

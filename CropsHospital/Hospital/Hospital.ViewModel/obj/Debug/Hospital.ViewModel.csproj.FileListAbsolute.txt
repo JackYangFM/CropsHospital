@@ -1,0 +1,10 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Debug\Hospital.ViewModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Debug\Hospital.ViewModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.csprojResolveAssemblyReference.cache
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Debug\Hospital.ViewModel.dll
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\bin\Debug\Hospital.ViewModel.pdb
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.csprojResolveAssemblyReference.cache
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.dll
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.ViewModel\obj\Debug\Hospital.ViewModel.pdb

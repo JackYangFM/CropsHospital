@@ -1,0 +1,5 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Release\Hospital.DBHelper.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Release\Hospital.DBHelper.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Release\Hospital.DBHelper.csprojResolveAssemblyReference.cache
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Release\Hospital.DBHelper.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Release\Hospital.DBHelper.pdb

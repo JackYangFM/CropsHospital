@@ -1,0 +1,16 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.IBLL.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.IBLL.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.Utility.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.ViewModel.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Enyim.Caching.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\NLog.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.DBHelper.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.Utility.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.ViewModel.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Enyim.Caching.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Enyim.Caching.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\NLog.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\bin\Release\Hospital.DBHelper.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\obj\Release\Hospital.IBLL.csprojResolveAssemblyReference.cache
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\obj\Release\Hospital.IBLL.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.IBLL\obj\Release\Hospital.IBLL.pdb

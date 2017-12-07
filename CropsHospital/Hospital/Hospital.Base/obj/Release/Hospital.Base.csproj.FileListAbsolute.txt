@@ -1,0 +1,12 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\Hospital.Base.dll.config
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\Hospital.Base.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\Hospital.Base.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.Extended.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.SqlServer.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.Extended.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\bin\Release\EntityFramework.SqlServer.xml
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\obj\Release\Hospital.Base.csprojResolveAssemblyReference.cache
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\obj\Release\Hospital.Base.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.Base\obj\Release\Hospital.Base.pdb

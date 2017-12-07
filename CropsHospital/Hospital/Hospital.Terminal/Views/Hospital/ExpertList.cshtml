@@ -1,0 +1,37 @@
+﻿@model Hospital.Terminal.Models.HospitalDetailModel
+@{
+    ViewBag.Title = "专家列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top rel">
+        <a class="top-back" href="/hospital/detail/@Model.Hospital.HospitalId/"></a>
+        <h1>专家列表</h1>
+    </header>
+
+    <div class="content-width expert-list-width">
+        <ul class="expert-list-box">
+            @if (Model.ExpertList != null && Model.ExpertList.Count > 0)
+            {
+                foreach (var expertInfo in Model.ExpertList)
+                {
+                    <li>
+                        <a href="/hospital/expertinfo/@expertInfo.ExpertId/">
+                            <span class="e-l-pic f-left" style="background-image:url(/Content/images/pic_expert.jpg)"></span>
+                            <ul class="f-left mar-left-30 mar-top-30">
+                                <li class="fs-44 fc-333333 text-otw">@expertInfo.RealName</li>
+                                <li class="fs-40 fc-323232 text-otw">@expertInfo.Unit</li>
+                                <li class="fs-40 fc-999999 text-otw">@expertInfo.Profession</li>
+                            </ul>
+                        </a>
+                    </li>
+                }
+            }
+
+        </ul>
+
+    </div>
+
+</div>

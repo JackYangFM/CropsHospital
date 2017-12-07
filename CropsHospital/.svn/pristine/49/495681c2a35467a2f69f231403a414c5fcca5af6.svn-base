@@ -1,0 +1,48 @@
+2016-07-05 10:34:58.3371        ■Error
+    ▲ControllerActionInvoker.InvokeExceptionFilters => Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException
+    ◇Hospital.Web.Base.Controllers.BaseController.OnException(j:\庄稼医院\CropsHospital\Hospital\Hospital.Web.Base\Controllers\BaseController.cs:66)
+    ◆
+请求信息：
+Controller=Plant，Action=Detail，RouteId=，TimeStamp=2016/7/5 10:34:53
+异常信息：
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Views_Plant_Detail_cshtml.Execute() 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.Terminal\Views\Plant\Detail.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+***************************************************************************
+2016-07-05 10:35:10.8668        ■Error
+    ▲ControllerActionInvoker.InvokeExceptionFilters => Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException
+    ◇Hospital.Web.Base.Controllers.BaseController.OnException(j:\庄稼医院\CropsHospital\Hospital\Hospital.Web.Base\Controllers\BaseController.cs:66)
+    ◆
+请求信息：
+Controller=Plant，Action=Detail，RouteId=，TimeStamp=2016/7/5 10:35:10
+异常信息：
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Views_Plant_Detail_cshtml.Execute() 位置 j:\庄稼医院\CropsHospital\Hospital\Hospital.Terminal\Views\Plant\Detail.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+***************************************************************************

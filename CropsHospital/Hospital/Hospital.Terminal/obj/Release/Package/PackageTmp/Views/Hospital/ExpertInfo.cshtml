@@ -1,0 +1,63 @@
+﻿@model Hospital.ViewModel.ExpertInfo
+@{
+    ViewBag.Title = "专家信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top rel">
+        <a class="top-back" href="/hospital/expertlist/@Model.HospitalId/"></a>
+        <h1>专家信息</h1>
+        <span class="top-collection"></span>
+    </header>
+
+    <div class="content-width expert-details-width">
+        <div class="essential-intro-box clearfix">
+            <span class="expert-img f-left" style="background-image:url(/Content/images/pic_expert.jpg)"></span>
+            <span class="f-left expert-else">
+                <div class="expert-name text-otw">@Model.RealName</div>
+                <div class="answer-button po-a"><a href="javascript:void(0)">我要问</a></div>
+            </span>
+        </div>
+        <div class="work-unit clearfix mar-top-30">
+            <span class="work-unit-title f-left">工作单位：</span>
+            <span class="work-unit-name f-left">@Model.Unit</span>
+        </div>
+        <div class="work-position clearfix mar-top-3">
+            <span class="work-position-title f-left">职位职称：</span>
+            <span class="work-position-name f-left">@Model.Profession</span>
+        </div>
+        <div class="field-box mar-top-30">
+            <h3>擅长领域</h3>
+            <p class="mar-top-3">世上没有两片相同的树叶，你是独一无二的。尽管兔子不会游泳，且差点被狼抓住，但也没有必要学习游泳。兔子擅长奔跑、打洞，就在这个领域尽情发挥，直到极致。何必在自己短处上和别人竞争呢？每个人都是一座宝藏，从事自己擅长的职业，做自己喜欢的事情，最容易出成果。</p>
+        </div>
+        <div class="personal-brief-box mar-top-30">
+            <h3>个人简介</h3>
+            <p class="mar-top-3">@Model.ExpertBrief</p>
+        </div>
+        <div class="join-issue mar-top-30">
+            <a href="javascript:void(0)" class="join-issue-title clearfix">
+                <span class="f-left fc-333333 fs-44">参与问题</span>
+                <span class="f-right fc-999999 fs-42">更多>></span>
+            </a>
+            <ul class="join-issue-list mar-top-3">
+                <li><a href="javascript:void(0)" class="text-otw">苹果树的叶子为什么干枯？</a></li>
+                <li><a href="javascript:void(0)" class="text-otw">苹果树的叶子为什么干枯？</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    <!--控制收藏样式-->
+    <script type="text/javascript">
+        $(".header-top .top-collection").click(function () {
+            $(this).toggleClass("top-collection-selected");
+
+        })
+
+    </script>    
+}

@@ -1,0 +1,35 @@
+﻿using System.ComponentModel.Composition;
+using System.Web.Mvc;
+using Hospital.IBLL;
+using Hospital.Terminal.Models;
+using Hospital.Web.Base.Controllers;
+
+namespace Hospital.Terminal.Controllers
+{
+    /// <summary>
+    /// 搜答案
+    /// </summary>
+    [Export]
+    public class QuestionController : BaseController
+    {
+        [Import]
+        public IPlantInfoContract PlantInfoContract { get; set; }
+
+        [Import]
+        public IQuestionInfoContract QuestionInfoContract { get; set; }
+
+        /// <summary>
+        /// 搜答案首页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Index()
+        {
+            var model = new QuestionIndexModel();
+            model.LetterList = PlantInfoContract.GetLetterList();  //字母列表
+            model.PlantList = PlantInfoContract.GetPlantList();   //植物列表
+            return View(model);
+        }
+
+
+    }
+}

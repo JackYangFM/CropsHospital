@@ -1,0 +1,10 @@
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Debug\Hospital.DBHelper.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Debug\Hospital.DBHelper.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.dll
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.pdb
+J:\庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.csprojResolveAssemblyReference.cache
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Debug\Hospital.DBHelper.dll
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\bin\Debug\Hospital.DBHelper.pdb
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.csprojResolveAssemblyReference.cache
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.dll
+H:\项目-庄稼医院\CropsHospital\Hospital\Hospital.DBHelper\obj\Debug\Hospital.DBHelper.pdb

@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "会员中心";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top">
+        <h1>我的</h1>
+    </header>
+
+    <div class="content-width personal-width">
+        <div class="pic-user-box">
+            <span class="pic-user f-left"></span>
+            <a href="javascript:void(0)" class="login-register f-left">登录/注册</a>
+            <!--<span class="user-date f-left">
+                    <ul>
+                        <li class="user-name">用户名称</li>
+                        <li class="user-grade">等级</li>
+                    </ul>
+                </span>-->
+        </div>
+        <ul class="personal-list">
+            <li><a href="javascript:void(0)" class="b-box">个人资料</a></li>
+            <li><a href="javascript:void(0)" class="b-box mar-bottom-30 mar-top-30">问答动态</a></li>
+            <li><a href="javascript:void(0)" class="b-box">用户反馈</a></li>
+            <li><a href="javascript:void(0)" class="b-box">帮助中心</a></li>
+            <li><a href="javascript:void(0)" class="b-box">修改密码</a></li>
+            <li><a href="javascript:void(0)" class="b-box">我的邀请码</a></li>
+            <li><a href="javascript:void(0)" class="b-box mar-top-30">申请专家</a></li>
+        </ul>
+        <a href="javascript:void(0)" class="button-exit">退出</a>
+    </div>
+
+    <footer class="footer-bottom footer-bottom-personal">
+        <a href="/home/index/" class="footer-index">首页</a>
+        <a href="javascript:void(0)" class="footer-collection">收藏</a>
+        <a href="/ask/index/" class="footer-news">资讯</a>
+        <a href="/member/index/" class="footer-user" style="color:#42a437;">我的</a>
+    </footer>
+
+    <!--退出弹出框-->
+    <section class="exit-login-box">
+        <div class="exit-login">
+            <div class="exit-tip te-cen">确认退出登录？</div>
+            <div class="exit-button">
+                <span class="exit-cancel f-left mar-left-100 mar-right-60 te-cen">取消</span>
+                <a href="index.html" class="exit-confirm f-left te-cen">确认</a>
+            </div>
+        </div>
+    </section>
+    <!--退出弹出框-->
+
+
+</div>
+@section scripts{
+    <script>
+    //弹出确认退出登录弹出框
+    $('.button-exit').click(function () {
+        $('.exit-login-box').fadeIn();
+
+    });
+    $('.exit-cancel').click(function() {
+        $('.exit-login-box').fadeOut();
+
+    });
+</script>    
+}
+

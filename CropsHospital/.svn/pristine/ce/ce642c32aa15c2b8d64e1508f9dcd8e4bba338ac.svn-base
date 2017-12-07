@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB83B7DD-4895-411A-A41E-3E6D41CD78D9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hospital.Terminal</RootNamespace>
+    <AssemblyName>Hospital.Terminal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.3.4\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\AskController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HospitalController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LsController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PlantController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AskIndexModel.cs" />
+    <Compile Include="Models\CategoryIndexModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\ContactWayModel.cs" />
+    <Compile Include="Models\HomeIndexModel.cs" />
+    <Compile Include="Models\HospitalDetailModel.cs" />
+    <Compile Include="Models\HospitalIndexModel.cs" />
+    <Compile Include="Models\ItemListModel.cs" />
+    <Compile Include="Models\LsIndexModel.cs" />
+    <Compile Include="Models\PathogenyListModel.cs" />
+    <Compile Include="Models\PlantDetailModel.cs" />
+    <Compile Include="Models\QuestionIndexModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\css.css" />
+    <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\swiper.min.css" />
+    <Content Include="Content\images\advert_1.jpg" />
+    <Content Include="Content\images\arrowl.png" />
+    <Content Include="Content\images\arrowr.png" />
+    <Content Include="Content\images\bg_user.jpg" />
+    <Content Include="Content\images\circle_arrow.png" />
+    <Content Include="Content\images\icon_answer.png" />
+    <Content Include="Content\images\icon_arrow_132.png" />
+    <Content Include="Content\images\icon_arrow_left.png" />
+    <Content Include="Content\images\icon_back_pre.png" />
+    <Content Include="Content\images\icon_collection.png" />
+    <Content Include="Content\images\icon_collection_news.png" />
+    <Content Include="Content\images\icon_collection_page.png" />
+    <Content Include="Content\images\icon_collection_selected.png" />
+    <Content Include="Content\images\icon_delete_collection.png" />
+    <Content Include="Content\images\icon_delete_collection_selected.png" />
+    <Content Include="Content\images\icon_disease.png" />
+    <Content Include="Content\images\icon_hospital.png" />
+    <Content Include="Content\images\icon_index.png" />
+    <Content Include="Content\images\icon_index_header.png" />
+    <Content Include="Content\images\icon_index_selected.png" />
+    <Content Include="Content\images\icon_message.png" />
+    <Content Include="Content\images\icon_news.png" />
+    <Content Include="Content\images\icon_news_header.png" />
+    <Content Include="Content\images\icon_news_selected.png" />
+    <Content Include="Content\images\icon_question.png" />
+    <Content Include="Content\images\icon_top_collection.png" />
+    <Content Include="Content\images\icon_top_collection_selected.png" />
+    <Content Include="Content\images\icon_triangle_down.png" />
+    <Content Include="Content\images\icon_user.png" />
+    <Content Include="Content\images\icon_user_selected.png" />
+    <Content Include="Content\images\line_title.png" />
+    <Content Include="Content\images\logo_hospital.png" />
+    <Content Include="Content\images\pic_banner.jpg" />
+    <Content Include="Content\images\pic_binghai.jpg" />
+    <Content Include="Content\images\pic_binghai01.jpg" />
+    <Content Include="Content\images\pic_binghai02.jpg" />
+    <Content Include="Content\images\pic_chonghai.png" />
+    <Content Include="Content\images\pic_expert.jpg" />
+    <Content Include="Content\images\pic_news.jpg" />
+    <Content Include="Content\images\pic_news_list.jpg" />
+    <Content Include="Content\images\u=868204611,3262670083&amp;fm=21&amp;gp=0.jpg" />
+    <Content Include="Content\js\jquery-1.10.1.min.js" />
+    <Content Include="Content\js\master.js" />
+    <Content Include="Content\js\unslider.min.js" />
+    <Content Include="Content\uploadify\jquery.uploadify.js" />
+    <Content Include="Content\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Content\uploadify\uploadify-cancel.png" />
+    <Content Include="Content\uploadify\uploadify.css" />
+    <Content Include="Content\uploadify\uploadify.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\images\member\" />
+    <Folder Include="Content\images\question\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hospital.Base\Hospital.Base.csproj">
+      <Project>{0e295f0d-0c3d-40ae-a6cf-94538ce42c2c}</Project>
+      <Name>Hospital.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.BLL\Hospital.BLL.csproj">
+      <Project>{74681149-1d95-46d0-a3f4-b5985ac25487}</Project>
+      <Name>Hospital.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DAL\Hospital.DAL.csproj">
+      <Project>{41f1566b-4955-428d-acd3-5ad39dd06268}</Project>
+      <Name>Hospital.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DataModel\Hospital.DataModel.csproj">
+      <Project>{b1318a61-5d95-41e4-a963-34d2719c4714}</Project>
+      <Name>Hospital.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.DBHelper\Hospital.DBHelper.csproj">
+      <Project>{69c3b603-511d-443c-9619-e5e4545fd21b}</Project>
+      <Name>Hospital.DBHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.IBLL\Hospital.IBLL.csproj">
+      <Project>{c08a836d-937c-4e6a-b0bb-703268230ae3}</Project>
+      <Name>Hospital.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.IDAL\Hospital.IDAL.csproj">
+      <Project>{1bc88e38-ab6f-427e-bd8c-a3df38edef4e}</Project>
+      <Name>Hospital.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.Utility\Hospital.Utility.csproj">
+      <Project>{5c5ba46a-f8d8-4729-a5b8-33b2a6d3a696}</Project>
+      <Name>Hospital.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.ViewModel\Hospital.ViewModel.csproj">
+      <Project>{bbb8499a-6f9c-401d-b9ba-2b60ef4de575}</Project>
+      <Name>Hospital.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hospital.Web.Base\Hospital.Web.Base.csproj">
+      <Project>{648321ef-0753-4d70-94c1-1203bddcf2e5}</Project>
+      <Name>Hospital.Web.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Plant\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Plant\ItemList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Plant\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\ch.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Hospital\Index.cshtml" />
+    <Content Include="Views\Hospital\Detail.cshtml" />
+    <Content Include="Views\Ask\Index.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Ls\Index.cshtml" />
+    <Content Include="Views\Plant\Category.cshtml" />
+    <Content Include="Views\Member\Collect.cshtml" />
+    <Content Include="Views\Member\CollectHospital.cshtml" />
+    <Content Include="Views\Member\CollectPathogeny.cshtml" />
+    <Content Include="Views\Hospital\ContactWay.cshtml" />
+    <Content Include="Views\Hospital\HospitalInfo.cshtml" />
+    <Content Include="Views\Hospital\ExpertList.cshtml" />
+    <Content Include="Views\Hospital\ExpertInfo.cshtml" />
+    <Content Include="Views\Member\CollectExpert.cshtml" />
+    <Content Include="Views\Ls\PathogenyList.cshtml" />
+    <Content Include="Views\Ask\Detail.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>48490</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48490/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

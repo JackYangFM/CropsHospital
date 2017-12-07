@@ -1,0 +1,101 @@
+﻿@model Hospital.Terminal.Models.AskIndexModel 
+@{
+    ViewBag.Title = "咨询首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top news-header">
+        <h1>资讯</h1>
+    </header>
+
+    <div class="content-width news-width">
+        <!--大图切换-->
+        <div class="banner" id="b04">
+            <ul>
+                <li><a href="/home/index/"><img src="/Content/images/pic_news.jpg" width="1080" alt="" /></a></li>
+                <li><a href="/home/index/"><img src="/Content/images/pic_news.jpg" width="1080" alt="" /></a></li>
+                <li><a href="/home/index/"><img src="/Content/images/pic_news.jpg" width="1080" alt="" /></a></li>
+                <li><a href="/home/index/"><img src="/Content/images/pic_news.jpg" width="1080" alt="" /></a></li>
+                <li><a href="/home/index/"><img src="/Content/images/pic_news.jpg" width="1080" alt="" /></a></li>
+            </ul>
+            <!-- arrow -->
+            <a href="javascript:void(0)" class="unslider-arrow prev" style="background-image: url(/Content/images/arrowl.png)"></a>
+            <a href="javascript:void(0)" class="unslider-arrow next" style="background-image: url(/Content/images/arrowr.png)"></a>
+        </div>
+        <!--大图切换-->
+
+        <ul class="news-list">
+            @if (Model.AskInfoList != null && Model.AskInfoList.Count > 0)
+            {
+                foreach (var askInfo in Model.AskInfoList)
+                {
+                    <li>
+                        <a href="javascript:void(0)">
+                            <table style="table-layout:fixed">
+                                <tr>
+                                    <td width="330" height="270" align="center" rowspan="2">
+                                        <img src="/Content/images/pic_news_list.jpg" width="280" height="210" />
+                                    </td>
+                                    <td class="news-title" width="750" height="170" valign="top">
+                                        <span>@askInfo.Title</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="news-time" width="750" height="100" valign="bottom">
+                                        <span class="text-otw">@askInfo.CreateTime.ToString("yyyy-MM-dd")</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+
+    <footer class="footer-bottom footer-bottom-news">
+        <a href="/home/index/" class="footer-index">首页</a>
+        <a href="/member/collect/" class="footer-collection">收藏</a>
+        <a href="/ask/index/" class="footer-news" style="color:#42a437;">资讯</a>
+        <a href="/member/index/" class="footer-user">我的</a>
+    </footer>
+
+</div>
+@section scripts{
+    <!--轮播-->
+<script>
+    var unslider = $('.banner').unslider();
+
+    $('.unslider-arrow').click(function () {
+        var fn = this.className.split(' ')[1];
+
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+</script>
+<script>
+    $(function () {
+        var slidey = $('.banner').unslider({
+            speed: 500,
+            delay: 3000,
+            complete: function () { },
+            keys: true,
+            dots: true,
+            fluid: false
+        });
+        data = slidey.data('unslider');
+        data.move(0, function () { });
+    });
+</script>
+<!--轮播-->
+<!--限制字数-->
+<script>
+    $(function () {
+        str = $(".news-title span").text().substr(0, 25) + " ...";
+        $(".news-title span").text(str);
+    })
+</script>
+<!--限制字数-->
+}

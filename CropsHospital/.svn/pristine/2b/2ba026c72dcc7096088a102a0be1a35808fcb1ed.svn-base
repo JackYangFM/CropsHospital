@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "登录页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    
+
+</div>

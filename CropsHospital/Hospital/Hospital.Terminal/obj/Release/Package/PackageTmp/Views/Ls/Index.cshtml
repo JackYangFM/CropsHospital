@@ -1,0 +1,347 @@
+﻿@model Hospital.Terminal.Models.LsIndexModel
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>新增病虫害信息</title>
+        <link href="~/Content/uploadify/uploadify.css" rel="stylesheet" />
+        <style type="text/css">
+            select {height: 40px;}
+            input[type='text']{height: 40px;width: 250px;}
+            textarea{height: 150px;width: 500px;}
+            input[type='button'] {
+                height: 50px;
+                width: 200px;
+            }
+
+            /*商品图片*/
+            .imgdiv {
+                width: 200px;
+                height: 228px;
+                float: left;
+                text-align: center;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            .clear {
+                display: block;
+                overflow: hidden;
+                clear: both;
+                height: 0;
+                line-height: 0;
+                font-size: 0;
+            }
+        </style>
+        <script src="~/Content/js/jquery-1.10.1.min.js"></script>
+        <script src="~/Content/uploadify/jquery.uploadify.min.js"></script>
+        <script type="text/javascript">
+            //获取分类2
+            function btnSelectCategory() {
+                var cate1 = $("#category1").val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/ls/AsyncCategotry',
+                    data: 'pid=' + cate1,
+                    dataType: 'Json',
+                    cache: false,
+                    async: false,
+                    success:function(data) {
+                        if (data.Result) {
+                            $("#category2").html(data.Msg);
+                        }
+                    },
+                    error:function() {
+                        alert('操作失败!');
+                    }
+                });
+            }
+            //分类3
+            function btnSelectCategory3() {
+                var cate2 = $("#category2").val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/ls/AsyncCategotry',
+                    data: 'pid=' + cate2 + '&grade='+3,
+                    dataType: 'Json',
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data.Result) {
+                            $("#category3").html(data.Msg);
+                        }
+                    },
+                    error: function () {
+                        alert('操作失败!');
+                    }
+                });
+            }
+
+            //保存
+            function btnSavePathogeny() {
+                var itemNumber = $("#hiddenItemNumber").val();
+                var cid = $("#category3").val();
+                var intitemtype = $("#itemtype").val();
+                var strItemName = $("#txtItemName").val();
+                var strItemEnglishName = $("#txtItemEnlishName").val();
+                var strNickName = $("#txtNickName").val();
+                var strBrief = $("#txtBrief").val();
+                var strAtt1 = $("#txtAttribute1").val();
+                var strAtt2 = $("#txtAttribute2").val();
+                var strAtt3 = $("#txtAttribute3").val();
+                var strAtt4 = $("#txtAttribute4").val();
+                var strAtt5 = $("#txtAttribute5").val();
+                var strAtt6 = $("#txtAttribute6").val();
+                var strAtt7 = $("#txtAttribute7").val();
+                var strAtt8 = $("#txtAttribute8").val();
+                var strAtt9 = $("#txtAttribute9").val();
+                var strAtt10 = $("#txtAttribute10").val();
+                var strAtt11 = $("#txtAttribute11").val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/ls/SavePathogeny',
+                    data: 'itemNumber=' + itemNumber + '&categoryId=' + cid + '&itemType=' + intitemtype + '&itemName=' + strItemName + '&englishName=' + strItemEnglishName + '&nickName=' + strNickName + '&brief=' + strBrief + '&attribute1=' + strAtt1 + '&attribute2=' + strAtt2 + '&attribute3=' + strAtt3 + '&attribute4=' + strAtt4 + '&attribute5=' + strAtt5 + '&attribute6=' + strAtt6 + '&attribute7=' + strAtt7 + '&attribute8=' + strAtt8 + '&attribute9=' + strAtt9 + '&attribute10=' + strAtt10 + '&attribute11=' + strAtt11,
+                    dataType: 'Json',
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data.Result) {
+                            alert("保存成功！ 编号：" + data.Msg);
+                        } else {
+                            alert("错误原因："+data.Msg);
+                        }
+                    },
+                    error: function () {
+                        alert('操作失败!');
+                    }
+                });
+            }
+        
+            /* 获取图片列表 */
+            function btnGetItemImageList(itemNumber) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Ls/GetItemImage',
+                    data: 'itemNumber=' + itemNumber,
+                    dataType: 'Json',
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data.Result) {
+                            $("#con_one_2_content").html('');
+                            $("#con_one_2_content").prepend(data.Msg);
+                        } else {
+                            alert(data.Msg);
+                        }
+                    },
+                    error: function () {
+                        alert("获取图片列表报错");
+                    }
+                });
+            }
+
+            function btnRefresh() {
+
+                $("#txtItemName").val("");
+                $("#txtItemEnlishName").val("");
+                $("#txtNickName").val("");
+                $("#txtBrief").val("");
+                $("#txtAttribute1").val("");
+                $("#txtAttribute2").val("");
+                $("#txtAttribute3").val("");
+                $("#txtAttribute4").val("");
+                $("#txtAttribute5").val("");
+                $("#txtAttribute6").val("");
+                $("#txtAttribute7").val("");
+                $("#txtAttribute8").val("");
+                $("#txtAttribute9").val("");
+                $("#txtAttribute10").val("");
+                $("#txtAttribute11").val("");
+                $("#txtItemName").focus();
+
+                location.reload();
+            }
+
+
+            //加载数据
+            $(function () {
+                //默认加载分类
+                btnSelectCategory();
+
+                btnSelectCategory3();
+
+                //图片
+                var itemNumber = $("#hiddenItemNumber").val();
+
+                $("#imge_upload").uploadify({
+                    'swf': '/Content/uploadify/uploadify.swf',
+                    'uploader': '/Ls/SaveItemImage',
+                    'multi': true,
+                    'simUploadLimit': 10,
+                    'fileSizeLimit': 0,
+                    'fileTypeExts': '*.gif; *.jpeg; *.jpg; *.png',
+                    'formData': { 'ItemNumber': itemNumber },
+                    'onSelectError': function (file, errorCode, errorMsg) {
+                        switch (errorCode) {
+                        case -100:
+                            alert("上传的文件数量已经超出系统限制的" + jQuery('#file_upload').uploadify('settings', 'queueSizeLimit') + "个文件！");
+                            break;
+                        case -110:
+                            alert("文件 [" + file.name + "] 大小超出系统限制的" + jQuery('#file_upload').uploadify('settings', 'fileSizeLimit') + "大小！");
+                            break;
+                        case -120:
+                            alert("文件 [" + file.name + "] 大小异常！");
+                            break;
+                        case -130:
+                            alert("文件 [" + file.name + "] 类型不正确！");
+                            break;
+                        }
+                    },
+                    'onClearQueue': function (queueItemCount) {
+                        alert("取消上传！");
+                        return;
+                    },
+                    'onQueueComplete': function (queueData) {
+                        //当队列中的所有文件全部完成上传时触发 
+                        //showBox(10, "所有文件上传完成");
+                        btnGetItemImageList(itemNumber);
+                        return;
+                    },
+                    'onUploadSuccess': function (file, data, response) {
+                        //上传完成时触发（每个文件触发一次） 
+                        return;
+                    }
+                });
+            });
+
+
+        </script>
+    </head>
+<body>
+    <div>
+        <table>
+            
+            <tr>
+                <td colspan="2"><h2>新增病虫害信息</h2></td>
+            </tr>
+            <tr>
+                <td>病虫害编号：</td>
+                <td>@Model.ItemNumber</td>
+            </tr>
+            <tr>
+                <td>分类名称：</td>
+                <td><select id="category1" onchange="btnSelectCategory();">
+                        @if (Model.CategoryList != null && Model.CategoryList.Count > 0)
+                        {
+                            foreach (var category in Model.CategoryList)
+                            {
+                                <option value="@category.Id">@category.CategoryName</option>
+                            }
+                        }
+                    </select>
+
+                    <select id="category2" onchange="btnSelectCategory3();">
+                    </select>
+                
+                    <select id="category3">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>类型：</td>
+                <td><select id="itemtype">
+                        <option value="0">病害</option>
+                        <option value="1">虫害</option>
+                        <option value="2">杂草</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>名称：</td>
+                <td><input type="text" id="txtItemName"/></td>
+            </tr>
+            <tr>
+                <td>英文名：</td>
+                <td><input type="text" id="txtItemEnlishName" /></td>
+            </tr>
+            <tr>
+                <td>异名：</td>
+                <td><input type="text" id="txtNickName"/></td>
+            </tr>
+            <tr>
+                <td>简介：</td>
+                <td><textarea id="txtBrief"></textarea></td>
+            </tr>
+            <tr>
+                <td>为害症状(病虫害特点)：</td>
+                <td><textarea id="txtAttribute1"></textarea></td>
+            </tr>
+            <tr>
+                <td>病原物(病虫害特点)：</td>
+                <td><textarea id="txtAttribute2"></textarea></td>
+            </tr>
+            <tr>
+                <td>侵染循环(病虫害特点)：</td>
+                <td><textarea id="txtAttribute3"></textarea></td>
+            </tr>
+            <tr>
+                <td>发生因素(病虫害特点)：</td>
+                <td><textarea id="txtAttribute4"></textarea></td>
+            </tr>
+            <tr>
+                <td>防治方法(病虫害特点)：</td>
+                <td><textarea id="txtAttribute5"></textarea></td>
+            </tr>
+            <tr>
+                <td>形态特征(病虫害特点或杂草特点)：</td>
+                <td><textarea id="txtAttribute6"></textarea></td>
+            </tr>
+            <tr>
+                <td>生活习性(病虫害特点)：</td>
+                <td><textarea id="txtAttribute7"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: red;">发生特点(杂草特点)：</td>
+                <td><textarea id="txtAttribute8"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: red;">地理分布(杂草特点)：</td>
+                <td><textarea id="txtAttribute9"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: red;">危害情况(杂草特点)：</td>
+                <td><textarea id="txtAttribute10"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: red;">用途(杂草特点)：</td>
+                <td><textarea id="txtAttribute11"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="保存" onclick="btnSavePathogeny();"/></td>
+                <td><input type="button" value="刷新" onclick="btnRefresh();" /></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div>
+        <div><h2>新增图片信息</h2></div>
+        <div id="con_one_2">
+            <!--这里添加商品列表-->
+            <div id="con_one_2_content">
+ 
+            </div>
+
+            <div class="imgdiv" style="text-align: center;">
+                <div style="padding-top: 10px; border: 2px solid #cccccc; height: 190px; overflow: hidden; ">
+                    <input type="file" name="imge_upload" id="imge_upload" />
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <input type="hidden" id="hiddenItemNumber" value="@Model.ItemNumber"/>
+    </div>
+</body>
+</html>

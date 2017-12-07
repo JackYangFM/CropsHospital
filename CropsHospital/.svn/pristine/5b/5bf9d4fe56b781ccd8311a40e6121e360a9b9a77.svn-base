@@ -1,0 +1,22 @@
+﻿@model Hospital.Terminal.Models.PlantDetailModel
+@{
+    ViewBag.Title = "病虫害明细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.PlantInfo.ItemName</h2>
+
+
+<div>
+    @if (Model.PathogenyImageList != null && Model.PathogenyImageList.Count > 0)
+    {
+        foreach (var image in Model.PathogenyImageList)
+        {
+            <img src="@image.ImgUrl" width="210" height="150"/>        
+        }
+    }
+    
+</div>
+<div>
+    @Html.Raw(Model.PlantInfo.Attribute1)
+</div>

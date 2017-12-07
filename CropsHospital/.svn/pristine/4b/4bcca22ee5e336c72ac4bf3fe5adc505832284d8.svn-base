@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "CollectHospital";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top hospital-collection-header">
+        <a href="/member/collect/"></a>
+        <h1>医院收藏列表</h1>
+        <span class="button-delete">删除</span>
+    </header>
+
+    <div class="content-width hospital-collection-width" style="margin-top:148px">
+
+        <!--医院列表-->
+        <ul class="recommend-hospital">
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box" style="background-image:url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg)"></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">中国人民解放军第一九五医院中国人民解放军第一九五医院</h3>
+                        <p class="text-otw">中国人民解放军一五九医院专门从事病虫害的</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box" style="background-image:url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg)"></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">中国人民解放军第一九五医院中国人民解放军第一九五医院</h3>
+                        <p class="text-otw">中国人民解放军一五九医院专门从事病虫害的</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box" style="background-image:url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg)"></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">中国人民解放军第一九五医院中国人民解放军第一九五医院</h3>
+                        <p class="text-otw">中国人民解放军一五九医院专门从事病虫害的</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box" style="background-image:url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg)"></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">中国人民解放军第一九五医院中国人民解放军第一九五医院</h3>
+                        <p class="text-otw">中国人民解放军一五九医院专门从事病虫害的</p>
+                    </span>
+
+                </a>
+            </li>
+            <li class="r-h-list">
+                <span class="delete-collection f-left"></span>
+                <a href="javascript:void(0)" class="clearfix">
+
+                    <span class="f-left b-box" style="background-image:url(/Content/images/u=868204611,3262670083&fm=21&gp=0.jpg)"></span>
+                    <span class="f-right">
+                        <h3 class="text-otw">中国人民解放军第一九五医院中国人民解放军第一九五医院</h3>
+                        <p class="text-otw">中国人民解放军一五九医院专门从事病虫害的</p>
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+        <!--推荐医院-->
+
+    </div>
+
+</div>
+
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        //选中
+        $(".delete-collection").click(function() {
+            $(this).toggleClass("delete-selected");
+        });
+
+        //删除
+        $(".button-delete").click(function() {
+            $('.delete-selected').parents('.r-h-list').detach();
+
+        });
+    </script>     
+}
+

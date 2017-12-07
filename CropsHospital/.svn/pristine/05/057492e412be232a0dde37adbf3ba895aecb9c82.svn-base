@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "收藏页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="wrapper-width">
+
+    <header class="header-top header-collection">
+        <h1>收藏</h1>
+    </header>
+
+    <div class="content-width collection-width">
+        <div class="collection-kind clearfix">
+            <a href="/member/collecthospital/" class="clearfix"><span class="f-left"></span><h3 class="f-left">医院</h3></a>
+            <a href="/member/collectpathogeny/"><span class="f-left"></span><h3 class="f-left">病虫害</h3></a>
+            <a href="#"><span class="f-left"></span><h3 class="f-left">问答</h3></a>
+            <a href="#"><span class="f-left"></span><h3 class="f-left">资讯</h3></a>
+        </div>
+    </div>
+    
+    <footer class="footer-bottom footer-bottom-collect">
+        <a href="/home/index/" class="footer-index">首页</a>
+        <a href="/member/collect/" class="footer-collection" style="color:#42a437;">收藏</a>
+        <a href="/ask/index/" class="footer-news">资讯</a>
+        <a href="/member/index/" class="footer-user">我的</a>
+    </footer>
+</div>

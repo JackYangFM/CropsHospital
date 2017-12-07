@@ -1,0 +1,41 @@
+﻿@model Hospital.Terminal.Models.CategoryIndexModel
+@{
+    ViewBag.Title = "分类页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header rel">
+        <a class="top-back" href="/home/index/"></a>
+        <h1>病虫害库</h1>
+    </header>
+
+    <div class="content-width disease-first-width">
+        @if (Model.CategoryList != null && Model.CategoryList.Count > 0)
+        {
+            foreach (var category in Model.CategoryList)
+            {
+                if (category.Grade==1)
+                {
+                    <ul class="kind-box">
+                        <li class="kind-title">@category.CategoryName</li>
+                        <li class="kind-list clearfix">
+                            @foreach (var category1 in Model.CategoryList)
+                            {
+                                if (category1.Grade == 2 && category1.Pid == category.Id)
+                                {
+                                    <a href="/plant/category/@category1.Id/">@category1.CategoryName</a>
+                                }
+                            }
+                        </li>
+                    </ul>
+                }
+            }
+        }
+
+    </div>
+</div>
+
+
+

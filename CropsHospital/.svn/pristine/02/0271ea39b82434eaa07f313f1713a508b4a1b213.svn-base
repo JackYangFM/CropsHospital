@@ -1,0 +1,171 @@
+﻿@model Hospital.Terminal.Models.PlantDetailModel
+@{
+    ViewBag.Title = "病虫害明细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header header-collection rel">
+        <a href="/plant/ItemList/@Model.MeCategoryList[2].Id/"></a>
+        <h1>@Model.PlantInfo.ItemName</h1>
+        <span class="top-collection"></span>
+    </header>
+
+    <div class="content-width disease-details-width">
+        <!--简介-->
+        <div class="disease-brief-intro">
+            <h3>简介</h3>
+            <ul>
+                <li><b>英文名：</b>@Model.PlantInfo.ItemEnglishName</li>
+                <li><b>异&nbsp;&nbsp;&nbsp;名：</b>@Model.PlantInfo.ItemNickName</li>
+                <li><b>简&nbsp;&nbsp;&nbsp;介：</b>@Model.PlantInfo.Brief</li>
+            </ul>
+        </div>
+        <!--图片-->
+        <!--图片-->
+        <div class="disease-pic mar-top-30">
+            <h3 class=" mar-left-30">图片</h3>
+            <ul class="clearfix">
+                @if (Model.PathogenyImageList != null && Model.PathogenyImageList.Count > 0)
+                {
+                    foreach (var image in Model.PathogenyImageList)
+                    {
+                        <li><img src="@image.ImgUrl" width="320" height="240" /></li>
+                    }
+                }
+            </ul>
+            <div class="img-tanceng"></div>
+        </div>
+
+        <!--图片-->
+        <!--其他-->
+        <div class="disease-else mar-top-30">
+            <h3>其他</h3>
+            <ul>
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute1))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            为害症状：</h4>
+                        <p>@Model.PlantInfo.Attribute1</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute2))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            病原物：</h4>
+                        <p>@Model.PlantInfo.Attribute2</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute3))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            侵染循环：</h4>
+                        <p>@Model.PlantInfo.Attribute3</p>
+                    </li>    
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute4))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            发生因素：</h4>
+                        <p>@Model.PlantInfo.Attribute4</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute5))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            防止方法：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute5</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute6))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            形态特征：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute6</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute7))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            生活习性：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute7</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute8))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            发生特点：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute8</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute9))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            地理分布：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute9</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute10))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            危害情况：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute10</p>
+                    </li>
+                }
+                @if (Model.PlantInfo != null && !string.IsNullOrWhiteSpace(Model.PlantInfo.Attribute11))
+                {
+                    <li>
+                        <h4 style="margin-left:0">
+                            用途：
+                        </h4>
+                        <p>@Model.PlantInfo.Attribute11</p>
+                    </li>
+                }
+
+            </ul>
+        </div>
+        <!--其他-->
+
+    </div>
+
+</div>
+
+@section scripts{
+    <!--控制图片缩放-->
+    <script>
+        $(".disease-pic img").click(function () {
+            $(this).addClass("img-changebig").css("z-index", "21");
+            $(".img-tanceng").css({ "display": "block", "z-index": "20" });
+        });
+        $(".img-tanceng").click(function () {
+            $("img").removeClass("img-changebig");
+            $(".img-tanceng").css("display", "none");
+        });
+    </script>
+    <!--控制图片缩放-->
+    <!--控制收藏样式-->
+    <script>
+        $(".header-collection .top-collection").click(function () {
+            $(this).toggleClass("top-collection-selected");
+
+        })
+
+    </script>
+}

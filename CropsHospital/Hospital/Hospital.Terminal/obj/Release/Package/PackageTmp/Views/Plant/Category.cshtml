@@ -1,0 +1,30 @@
+﻿@model Hospital.Terminal.Models.CategoryModel
+@{
+    ViewBag.Title = "二级分类页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header rel">
+        <a href="/plant/index/"></a>
+        <h1>@Model.MeCategoryList[0].CategoryName-@Model.MeCategoryList[1].CategoryName</h1>
+    </header>
+
+    <div class="content-width disease-second-width">
+        <ul class="hebenke-box">
+            <li class="clearfix">
+                @if (Model.CategoryList != null && Model.CategoryList.Count > 0)
+                {
+                    foreach (var category in Model.CategoryList)
+                    {
+                        <a href="/plant/ItemList/@category.Id/">@category.CategoryName</a>
+                    }
+                }
+            </li>
+        </ul>
+
+    </div>
+
+
+</div>

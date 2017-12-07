@@ -1,0 +1,56 @@
+﻿using System.ComponentModel.Composition;
+using System.Web.Mvc;
+using Hospital.IBLL;
+using Hospital.Terminal.Models;
+using Hospital.Web.Base.Controllers;
+
+namespace Hospital.Terminal.Controllers
+{
+    /// <summary>
+    /// 医院
+    /// </summary>
+    [Export]
+    public class HospitalController : BaseController
+    {
+        [Import]
+        public IHospitalInfoContract HospitalInfoContract { get; set; }
+
+        [Import]
+        public IExpertInfoContract ExpertInfoContract { get; set; }
+
+        /// <summary>
+        /// 医院列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Index(int page=1)
+        {
+            var model = new HospitalIndexModel();
+            int total;
+            model.HospitalList = HospitalInfoContract.GetHospitalList(page, 10, out total);
+
+            model.PageIndex = page;
+            model.PageSize = 10;
+            model.TotalCount = total;
+            return View(model);
+        }
+
+        /// <summary>
+        /// 医院详情页
+        /// </summary>
+        /// <param name="hospitalId">医院编号</param>
+        /// <param name="page">专家页当前页数</param>
+        /// <returns></returns>
+        public ActionResult Detail(int hospitalId,int page=1)
+        {
+            var model = new HospitalDetailModel();
+            int total;
+            model.Hospital = HospitalInfoContract.GetHospitalInfo(hospitalId);    //庄稼医院信息
+            model.ExpertList = ExpertInfoContract.GetExpertList(hospitalId, page, 10, out total);  //专家列表
+            model.PageIndex = page;
+            model.PageSize = 10;
+            model.TotalCount = total;
+            return View(model);
+        }
+
+    }
+}

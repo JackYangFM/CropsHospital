@@ -1,0 +1,27 @@
+﻿@model Hospital.Terminal.Models.PathogenyListModels
+@{
+    ViewBag.Title = "PathogenyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.PathogenyList != null && Model.PathogenyList.Count > 0)
+{
+    foreach (var pathogenyInfo in Model.PathogenyList)
+    {
+        <div style="font-size: 20px;">
+            <h3>@pathogenyInfo.ItemName</h3>
+            <p>@pathogenyInfo.ItemEnglishName</p>
+            <p>@pathogenyInfo.ItemNickName</p>
+            <p>@pathogenyInfo.Brief</p>
+            @if (pathogenyInfo.ImageList != null && pathogenyInfo.ImageList.Count > 0)
+            {
+                <div>
+                    @foreach (var imageInfo in pathogenyInfo.ImageList)
+                    {
+                        <img src="@imageInfo.ImgUrl" width="100" height="100"/>
+                    }
+                </div>
+            }
+        </div>
+    }
+}

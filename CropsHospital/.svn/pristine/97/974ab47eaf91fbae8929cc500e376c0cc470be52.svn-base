@@ -1,0 +1,26 @@
+﻿@model Hospital.Terminal.Models.QuestionIndexModel
+@{
+    ViewBag.Title = "搜答案";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>搜答案</h2>
+
+
+<div>
+    @if (Model.LetterList != null && Model.LetterList.Count > 0)
+    {
+        foreach (var str in Model.LetterList)
+        {
+            <span>@str</span>
+        }
+    }
+</div>
+
+@if (Model.PlantList != null && Model.PlantList.Count > 0)
+{
+    foreach (var plantInfo in Model.PlantList)
+    {
+        <a href="#">@plantInfo.PlantName</a>
+    }
+}

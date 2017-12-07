@@ -1,0 +1,18 @@
+﻿@model Hospital.Terminal.Models.ItemListModel
+@{
+    ViewBag.Title = "病虫害列表页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>病虫害列表页</h2>
+
+@if (Model.PathogenyList != null && Model.PathogenyList.Count > 0)
+{
+    foreach (var pathogeny in Model.PathogenyList)
+    {
+        <h4><a href="/plant/detail/@pathogeny.ItemNumber/">@pathogeny.ItemName</a></h4>
+        <div>
+            @Html.Raw(pathogeny.Attribute1)
+        </div>
+    }
+}

@@ -1,0 +1,19 @@
+﻿@model Hospital.Terminal.Models.ContactWayModel
+@{
+    ViewBag.Title = "医院介绍";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper-width">
+
+    <header class="header-top disease-first-header rel">
+        <a href="/hospital/detail/@Model.Hospital.HospitalId/"></a>
+        <h1>医院介绍</h1>
+    </header>
+
+    <div class="content-width hospital-intro-width">
+        <div class="hospital-intro-box">
+            <p>@Model.Hospital.Brief</p>
+        </div>
+    </div>
+</div>
